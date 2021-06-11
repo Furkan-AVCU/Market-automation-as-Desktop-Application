@@ -1,0 +1,679 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="MarketOtomasyonDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="calisanlar">
+          <Key>
+            <PropertyRef Name="Calisan_id" />
+          </Key>
+          <Property Name="Calisan_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Calisan_tc" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Calisan_adi" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Calisan_soyadi" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Kullanici_adi" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Parola" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Rol_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="iadeler">
+          <Key>
+            <PropertyRef Name="iade_id" />
+          </Key>
+          <Property Name="iade_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="urun_id" Type="int" Nullable="false" />
+          <Property Name="neden" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="calisan_id" Type="int" Nullable="false" />
+          <Property Name="iade_tarih" Type="date" Nullable="false" />
+          <Property Name="adet" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="kategoriler">
+          <Key>
+            <PropertyRef Name="Kategori_id" />
+          </Key>
+          <Property Name="Kategori_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Kategori_adi" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="roller">
+          <Key>
+            <PropertyRef Name="Rol_id" />
+          </Key>
+          <Property Name="Rol_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Rol_adi" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="satislar">
+          <Key>
+            <PropertyRef Name="satis_id" />
+          </Key>
+          <Property Name="satis_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="calisan_id" Type="int" Nullable="false" />
+          <Property Name="urun_id" Type="int" Nullable="false" />
+          <Property Name="satis_fiyat" Type="float" Nullable="false" />
+          <Property Name="satis_tarihi" Type="date" Nullable="false" />
+          <Property Name="adet" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="urunler">
+          <Key>
+            <PropertyRef Name="Urun_id" />
+          </Key>
+          <Property Name="Urun_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Urun_adi" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Kategori_id" Type="int" Nullable="false" />
+          <Property Name="fiyat" Type="float" Nullable="false" />
+          <Property Name="stok" Type="int" Nullable="false" />
+          <Property Name="alis_fiyat" Type="float" Nullable="false" />
+          <Property Name="uretim_tarihi" Type="date" Nullable="false" />
+          <Property Name="tuketim_tarihi" Type="date" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'MarketOtomasyonDB.dbo.son24saatsatis' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="son24saatsatis">
+          <Key>
+            <PropertyRef Name="satis_id" />
+            <PropertyRef Name="satis_tarihi" />
+            <PropertyRef Name="calisan_id" />
+            <PropertyRef Name="urun_id" />
+            <PropertyRef Name="satis_fiyat" />
+            <PropertyRef Name="adet" />
+          </Key>
+          <Property Name="satis_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="satis_tarihi" Type="date" Nullable="false" />
+          <Property Name="calisan_id" Type="int" Nullable="false" />
+          <Property Name="urun_id" Type="int" Nullable="false" />
+          <Property Name="satis_fiyat" Type="float" Nullable="false" />
+          <Property Name="adet" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'MarketOtomasyonDB.dbo.StokBitenUrunler' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="StokBitenUrunler">
+          <Key>
+            <PropertyRef Name="Urun_id" />
+            <PropertyRef Name="Urun_adi" />
+            <PropertyRef Name="stok" />
+            <PropertyRef Name="Kategori_adi" />
+            <PropertyRef Name="fiyat" />
+            <PropertyRef Name="alis_fiyat" />
+            <PropertyRef Name="uretim_tarihi" />
+            <PropertyRef Name="tuketim_tarihi" />
+          </Key>
+          <Property Name="Urun_id" Type="int" Nullable="false" />
+          <Property Name="Urun_adi" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="stok" Type="int" Nullable="false" />
+          <Property Name="Kategori_adi" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="fiyat" Type="float" Nullable="false" />
+          <Property Name="alis_fiyat" Type="float" Nullable="false" />
+          <Property Name="uretim_tarihi" Type="date" Nullable="false" />
+          <Property Name="tuketim_tarihi" Type="date" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'MarketOtomasyonDB.dbo.TarihiGecmisUrunler' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="TarihiGecmisUrunler">
+          <Key>
+            <PropertyRef Name="Urun_id" />
+            <PropertyRef Name="Urun_adi" />
+            <PropertyRef Name="stok" />
+            <PropertyRef Name="tuketim_tarihi" />
+            <PropertyRef Name="uretim_tarihi" />
+            <PropertyRef Name="fiyat" />
+            <PropertyRef Name="Kategori_adi" />
+            <PropertyRef Name="alis_fiyat" />
+          </Key>
+          <Property Name="Urun_id" Type="int" Nullable="false" />
+          <Property Name="Urun_adi" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="stok" Type="int" Nullable="false" />
+          <Property Name="tuketim_tarihi" Type="date" Nullable="false" />
+          <Property Name="uretim_tarihi" Type="date" Nullable="false" />
+          <Property Name="fiyat" Type="float" Nullable="false" />
+          <Property Name="Kategori_adi" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="alis_fiyat" Type="float" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_calisanlar_roller">
+          <End Role="roller" Type="Self.roller" Multiplicity="1" />
+          <End Role="calisanlar" Type="Self.calisanlar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="roller">
+              <PropertyRef Name="Rol_id" />
+            </Principal>
+            <Dependent Role="calisanlar">
+              <PropertyRef Name="Rol_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_iadeler_calisanlar">
+          <End Role="calisanlar" Type="Self.calisanlar" Multiplicity="1" />
+          <End Role="iadeler" Type="Self.iadeler" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="calisanlar">
+              <PropertyRef Name="Calisan_id" />
+            </Principal>
+            <Dependent Role="iadeler">
+              <PropertyRef Name="calisan_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_iadeler_urunler">
+          <End Role="urunler" Type="Self.urunler" Multiplicity="1" />
+          <End Role="iadeler" Type="Self.iadeler" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="urunler">
+              <PropertyRef Name="Urun_id" />
+            </Principal>
+            <Dependent Role="iadeler">
+              <PropertyRef Name="urun_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_satislar_calisanlar">
+          <End Role="calisanlar" Type="Self.calisanlar" Multiplicity="1" />
+          <End Role="satislar" Type="Self.satislar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="calisanlar">
+              <PropertyRef Name="Calisan_id" />
+            </Principal>
+            <Dependent Role="satislar">
+              <PropertyRef Name="calisan_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_satislar_urunler">
+          <End Role="urunler" Type="Self.urunler" Multiplicity="1" />
+          <End Role="satislar" Type="Self.satislar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="urunler">
+              <PropertyRef Name="Urun_id" />
+            </Principal>
+            <Dependent Role="satislar">
+              <PropertyRef Name="urun_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_urunler_kategoriler">
+          <End Role="kategoriler" Type="Self.kategoriler" Multiplicity="1" />
+          <End Role="urunler" Type="Self.urunler" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kategoriler">
+              <PropertyRef Name="Kategori_id" />
+            </Principal>
+            <Dependent Role="urunler">
+              <PropertyRef Name="Kategori_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MarketOtomasyonDBModelStoreContainer">
+          <EntitySet Name="calisanlar" EntityType="Self.calisanlar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="iadeler" EntityType="Self.iadeler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="kategoriler" EntityType="Self.kategoriler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="roller" EntityType="Self.roller" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="satislar" EntityType="Self.satislar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="urunler" EntityType="Self.urunler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="son24saatsatis" EntityType="Self.son24saatsatis" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [son24saatsatis].[satis_id] AS [satis_id], 
+    [son24saatsatis].[satis_tarihi] AS [satis_tarihi], 
+    [son24saatsatis].[calisan_id] AS [calisan_id], 
+    [son24saatsatis].[urun_id] AS [urun_id], 
+    [son24saatsatis].[satis_fiyat] AS [satis_fiyat], 
+    [son24saatsatis].[adet] AS [adet]
+    FROM [dbo].[son24saatsatis] AS [son24saatsatis]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="StokBitenUrunler" EntityType="Self.StokBitenUrunler" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [StokBitenUrunler].[Urun_id] AS [Urun_id], 
+    [StokBitenUrunler].[Urun_adi] AS [Urun_adi], 
+    [StokBitenUrunler].[stok] AS [stok], 
+    [StokBitenUrunler].[Kategori_adi] AS [Kategori_adi], 
+    [StokBitenUrunler].[fiyat] AS [fiyat], 
+    [StokBitenUrunler].[alis_fiyat] AS [alis_fiyat], 
+    [StokBitenUrunler].[uretim_tarihi] AS [uretim_tarihi], 
+    [StokBitenUrunler].[tuketim_tarihi] AS [tuketim_tarihi]
+    FROM [dbo].[StokBitenUrunler] AS [StokBitenUrunler]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TarihiGecmisUrunler" EntityType="Self.TarihiGecmisUrunler" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [TarihiGecmisUrunler].[Urun_id] AS [Urun_id], 
+    [TarihiGecmisUrunler].[Urun_adi] AS [Urun_adi], 
+    [TarihiGecmisUrunler].[stok] AS [stok], 
+    [TarihiGecmisUrunler].[tuketim_tarihi] AS [tuketim_tarihi], 
+    [TarihiGecmisUrunler].[uretim_tarihi] AS [uretim_tarihi], 
+    [TarihiGecmisUrunler].[fiyat] AS [fiyat], 
+    [TarihiGecmisUrunler].[Kategori_adi] AS [Kategori_adi], 
+    [TarihiGecmisUrunler].[alis_fiyat] AS [alis_fiyat]
+    FROM [dbo].[TarihiGecmisUrunler] AS [TarihiGecmisUrunler]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_calisanlar_roller" Association="Self.FK_calisanlar_roller">
+            <End Role="roller" EntitySet="roller" />
+            <End Role="calisanlar" EntitySet="calisanlar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_iadeler_calisanlar" Association="Self.FK_iadeler_calisanlar">
+            <End Role="calisanlar" EntitySet="calisanlar" />
+            <End Role="iadeler" EntitySet="iadeler" />
+          </AssociationSet>
+          <AssociationSet Name="FK_iadeler_urunler" Association="Self.FK_iadeler_urunler">
+            <End Role="urunler" EntitySet="urunler" />
+            <End Role="iadeler" EntitySet="iadeler" />
+          </AssociationSet>
+          <AssociationSet Name="FK_satislar_calisanlar" Association="Self.FK_satislar_calisanlar">
+            <End Role="calisanlar" EntitySet="calisanlar" />
+            <End Role="satislar" EntitySet="satislar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_satislar_urunler" Association="Self.FK_satislar_urunler">
+            <End Role="urunler" EntitySet="urunler" />
+            <End Role="satislar" EntitySet="satislar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_urunler_kategoriler" Association="Self.FK_urunler_kategoriler">
+            <End Role="kategoriler" EntitySet="kategoriler" />
+            <End Role="urunler" EntitySet="urunler" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MarketOtomasyonDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="calisanlar">
+          <Key>
+            <PropertyRef Name="Calisan_id" />
+          </Key>
+          <Property Name="Calisan_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Calisan_tc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Calisan_adi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Calisan_soyadi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Kullanici_adi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Parola" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Rol_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="roller" Relationship="Self.FK_calisanlar_roller" FromRole="calisanlar" ToRole="roller" />
+          <NavigationProperty Name="iadeler" Relationship="Self.FK_iadeler_calisanlar" FromRole="calisanlar" ToRole="iadeler" />
+          <NavigationProperty Name="satislar" Relationship="Self.FK_satislar_calisanlar" FromRole="calisanlar" ToRole="satislar" />
+        </EntityType>
+        <EntityType Name="iadeler">
+          <Key>
+            <PropertyRef Name="iade_id" />
+          </Key>
+          <Property Name="iade_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="urun_id" Type="Int32" Nullable="false" />
+          <Property Name="neden" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="calisan_id" Type="Int32" Nullable="false" />
+          <Property Name="iade_tarih" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="adet" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="calisanlar" Relationship="Self.FK_iadeler_calisanlar" FromRole="iadeler" ToRole="calisanlar" />
+          <NavigationProperty Name="urunler" Relationship="Self.FK_iadeler_urunler" FromRole="iadeler" ToRole="urunler" />
+        </EntityType>
+        <EntityType Name="kategoriler">
+          <Key>
+            <PropertyRef Name="Kategori_id" />
+          </Key>
+          <Property Name="Kategori_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Kategori_adi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="urunler" Relationship="Self.FK_urunler_kategoriler" FromRole="kategoriler" ToRole="urunler" />
+        </EntityType>
+        <EntityType Name="roller">
+          <Key>
+            <PropertyRef Name="Rol_id" />
+          </Key>
+          <Property Name="Rol_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Rol_adi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="calisanlar" Relationship="Self.FK_calisanlar_roller" FromRole="roller" ToRole="calisanlar" />
+        </EntityType>
+        <EntityType Name="satislar">
+          <Key>
+            <PropertyRef Name="satis_id" />
+          </Key>
+          <Property Name="satis_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="calisan_id" Type="Int32" Nullable="false" />
+          <Property Name="urun_id" Type="Int32" Nullable="false" />
+          <Property Name="satis_fiyat" Type="Double" Nullable="false" />
+          <Property Name="satis_tarihi" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="adet" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="calisanlar" Relationship="Self.FK_satislar_calisanlar" FromRole="satislar" ToRole="calisanlar" />
+          <NavigationProperty Name="urunler" Relationship="Self.FK_satislar_urunler" FromRole="satislar" ToRole="urunler" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="urunler">
+          <Key>
+            <PropertyRef Name="Urun_id" />
+          </Key>
+          <Property Name="Urun_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Urun_adi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Kategori_id" Type="Int32" Nullable="false" />
+          <Property Name="fiyat" Type="Double" Nullable="false" />
+          <Property Name="stok" Type="Int32" Nullable="false" />
+          <Property Name="alis_fiyat" Type="Double" Nullable="false" />
+          <Property Name="uretim_tarihi" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="tuketim_tarihi" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="iadeler" Relationship="Self.FK_iadeler_urunler" FromRole="urunler" ToRole="iadeler" />
+          <NavigationProperty Name="kategoriler" Relationship="Self.FK_urunler_kategoriler" FromRole="urunler" ToRole="kategoriler" />
+          <NavigationProperty Name="satislar" Relationship="Self.FK_satislar_urunler" FromRole="urunler" ToRole="satislar" />
+        </EntityType>
+        <EntityType Name="son24saatsatis">
+          <Key>
+            <PropertyRef Name="satis_id" />
+            <PropertyRef Name="satis_tarihi" />
+            <PropertyRef Name="calisan_id" />
+            <PropertyRef Name="urun_id" />
+            <PropertyRef Name="satis_fiyat" />
+            <PropertyRef Name="adet" />
+          </Key>
+          <Property Name="satis_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="satis_tarihi" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="calisan_id" Type="Int32" Nullable="false" />
+          <Property Name="urun_id" Type="Int32" Nullable="false" />
+          <Property Name="satis_fiyat" Type="Double" Nullable="false" />
+          <Property Name="adet" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="StokBitenUrunler">
+          <Key>
+            <PropertyRef Name="Urun_id" />
+            <PropertyRef Name="Urun_adi" />
+            <PropertyRef Name="stok" />
+            <PropertyRef Name="Kategori_adi" />
+            <PropertyRef Name="fiyat" />
+            <PropertyRef Name="alis_fiyat" />
+            <PropertyRef Name="uretim_tarihi" />
+            <PropertyRef Name="tuketim_tarihi" />
+          </Key>
+          <Property Name="Urun_id" Type="Int32" Nullable="false" />
+          <Property Name="Urun_adi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="stok" Type="Int32" Nullable="false" />
+          <Property Name="Kategori_adi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="fiyat" Type="Double" Nullable="false" />
+          <Property Name="alis_fiyat" Type="Double" Nullable="false" />
+          <Property Name="uretim_tarihi" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="tuketim_tarihi" Type="DateTime" Nullable="false" Precision="0" />
+        </EntityType>
+        <EntityType Name="TarihiGecmisUrunler">
+          <Key>
+            <PropertyRef Name="Urun_id" />
+            <PropertyRef Name="Urun_adi" />
+            <PropertyRef Name="stok" />
+            <PropertyRef Name="tuketim_tarihi" />
+            <PropertyRef Name="uretim_tarihi" />
+            <PropertyRef Name="fiyat" />
+            <PropertyRef Name="Kategori_adi" />
+            <PropertyRef Name="alis_fiyat" />
+          </Key>
+          <Property Name="Urun_id" Type="Int32" Nullable="false" />
+          <Property Name="Urun_adi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="stok" Type="Int32" Nullable="false" />
+          <Property Name="tuketim_tarihi" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="uretim_tarihi" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="fiyat" Type="Double" Nullable="false" />
+          <Property Name="Kategori_adi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="alis_fiyat" Type="Double" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_calisanlar_roller">
+          <End Role="roller" Type="Self.roller" Multiplicity="1" />
+          <End Role="calisanlar" Type="Self.calisanlar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="roller">
+              <PropertyRef Name="Rol_id" />
+            </Principal>
+            <Dependent Role="calisanlar">
+              <PropertyRef Name="Rol_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_iadeler_calisanlar">
+          <End Role="calisanlar" Type="Self.calisanlar" Multiplicity="1" />
+          <End Role="iadeler" Type="Self.iadeler" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="calisanlar">
+              <PropertyRef Name="Calisan_id" />
+            </Principal>
+            <Dependent Role="iadeler">
+              <PropertyRef Name="calisan_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_satislar_calisanlar">
+          <End Role="calisanlar" Type="Self.calisanlar" Multiplicity="1" />
+          <End Role="satislar" Type="Self.satislar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="calisanlar">
+              <PropertyRef Name="Calisan_id" />
+            </Principal>
+            <Dependent Role="satislar">
+              <PropertyRef Name="calisan_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_iadeler_urunler">
+          <End Role="urunler" Type="Self.urunler" Multiplicity="1" />
+          <End Role="iadeler" Type="Self.iadeler" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="urunler">
+              <PropertyRef Name="Urun_id" />
+            </Principal>
+            <Dependent Role="iadeler">
+              <PropertyRef Name="urun_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_urunler_kategoriler">
+          <End Role="kategoriler" Type="Self.kategoriler" Multiplicity="1" />
+          <End Role="urunler" Type="Self.urunler" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kategoriler">
+              <PropertyRef Name="Kategori_id" />
+            </Principal>
+            <Dependent Role="urunler">
+              <PropertyRef Name="Kategori_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_satislar_urunler">
+          <End Role="urunler" Type="Self.urunler" Multiplicity="1" />
+          <End Role="satislar" Type="Self.satislar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="urunler">
+              <PropertyRef Name="Urun_id" />
+            </Principal>
+            <Dependent Role="satislar">
+              <PropertyRef Name="urun_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MarketOtomasyonDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="calisanlar" EntityType="Self.calisanlar" />
+          <EntitySet Name="iadeler" EntityType="Self.iadeler" />
+          <EntitySet Name="kategoriler" EntityType="Self.kategoriler" />
+          <EntitySet Name="roller" EntityType="Self.roller" />
+          <EntitySet Name="satislar" EntityType="Self.satislar" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="urunler" EntityType="Self.urunler" />
+          <EntitySet Name="son24saatsatis" EntityType="Self.son24saatsatis" />
+          <EntitySet Name="StokBitenUrunler" EntityType="Self.StokBitenUrunler" />
+          <EntitySet Name="TarihiGecmisUrunler" EntityType="Self.TarihiGecmisUrunler" />
+          <AssociationSet Name="FK_calisanlar_roller" Association="Self.FK_calisanlar_roller">
+            <End Role="roller" EntitySet="roller" />
+            <End Role="calisanlar" EntitySet="calisanlar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_iadeler_calisanlar" Association="Self.FK_iadeler_calisanlar">
+            <End Role="calisanlar" EntitySet="calisanlar" />
+            <End Role="iadeler" EntitySet="iadeler" />
+          </AssociationSet>
+          <AssociationSet Name="FK_satislar_calisanlar" Association="Self.FK_satislar_calisanlar">
+            <End Role="calisanlar" EntitySet="calisanlar" />
+            <End Role="satislar" EntitySet="satislar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_iadeler_urunler" Association="Self.FK_iadeler_urunler">
+            <End Role="urunler" EntitySet="urunler" />
+            <End Role="iadeler" EntitySet="iadeler" />
+          </AssociationSet>
+          <AssociationSet Name="FK_urunler_kategoriler" Association="Self.FK_urunler_kategoriler">
+            <End Role="kategoriler" EntitySet="kategoriler" />
+            <End Role="urunler" EntitySet="urunler" />
+          </AssociationSet>
+          <AssociationSet Name="FK_satislar_urunler" Association="Self.FK_satislar_urunler">
+            <End Role="urunler" EntitySet="urunler" />
+            <End Role="satislar" EntitySet="satislar" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MarketOtomasyonDBModelStoreContainer" CdmEntityContainer="MarketOtomasyonDBEntities">
+          <EntitySetMapping Name="calisanlar">
+            <EntityTypeMapping TypeName="MarketOtomasyonDBModel.calisanlar">
+              <MappingFragment StoreEntitySet="calisanlar">
+                <ScalarProperty Name="Calisan_id" ColumnName="Calisan_id" />
+                <ScalarProperty Name="Calisan_tc" ColumnName="Calisan_tc" />
+                <ScalarProperty Name="Calisan_adi" ColumnName="Calisan_adi" />
+                <ScalarProperty Name="Calisan_soyadi" ColumnName="Calisan_soyadi" />
+                <ScalarProperty Name="Kullanici_adi" ColumnName="Kullanici_adi" />
+                <ScalarProperty Name="Parola" ColumnName="Parola" />
+                <ScalarProperty Name="Rol_id" ColumnName="Rol_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="iadeler">
+            <EntityTypeMapping TypeName="MarketOtomasyonDBModel.iadeler">
+              <MappingFragment StoreEntitySet="iadeler">
+                <ScalarProperty Name="iade_id" ColumnName="iade_id" />
+                <ScalarProperty Name="urun_id" ColumnName="urun_id" />
+                <ScalarProperty Name="neden" ColumnName="neden" />
+                <ScalarProperty Name="calisan_id" ColumnName="calisan_id" />
+                <ScalarProperty Name="iade_tarih" ColumnName="iade_tarih" />
+                <ScalarProperty Name="adet" ColumnName="adet" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="kategoriler">
+            <EntityTypeMapping TypeName="MarketOtomasyonDBModel.kategoriler">
+              <MappingFragment StoreEntitySet="kategoriler">
+                <ScalarProperty Name="Kategori_id" ColumnName="Kategori_id" />
+                <ScalarProperty Name="Kategori_adi" ColumnName="Kategori_adi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="roller">
+            <EntityTypeMapping TypeName="MarketOtomasyonDBModel.roller">
+              <MappingFragment StoreEntitySet="roller">
+                <ScalarProperty Name="Rol_id" ColumnName="Rol_id" />
+                <ScalarProperty Name="Rol_adi" ColumnName="Rol_adi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="satislar">
+            <EntityTypeMapping TypeName="MarketOtomasyonDBModel.satislar">
+              <MappingFragment StoreEntitySet="satislar">
+                <ScalarProperty Name="satis_id" ColumnName="satis_id" />
+                <ScalarProperty Name="calisan_id" ColumnName="calisan_id" />
+                <ScalarProperty Name="urun_id" ColumnName="urun_id" />
+                <ScalarProperty Name="satis_fiyat" ColumnName="satis_fiyat" />
+                <ScalarProperty Name="satis_tarihi" ColumnName="satis_tarihi" />
+                <ScalarProperty Name="adet" ColumnName="adet" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="MarketOtomasyonDBModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="urunler">
+            <EntityTypeMapping TypeName="MarketOtomasyonDBModel.urunler">
+              <MappingFragment StoreEntitySet="urunler">
+                <ScalarProperty Name="Urun_id" ColumnName="Urun_id" />
+                <ScalarProperty Name="Urun_adi" ColumnName="Urun_adi" />
+                <ScalarProperty Name="Kategori_id" ColumnName="Kategori_id" />
+                <ScalarProperty Name="fiyat" ColumnName="fiyat" />
+                <ScalarProperty Name="stok" ColumnName="stok" />
+                <ScalarProperty Name="alis_fiyat" ColumnName="alis_fiyat" />
+                <ScalarProperty Name="uretim_tarihi" ColumnName="uretim_tarihi" />
+                <ScalarProperty Name="tuketim_tarihi" ColumnName="tuketim_tarihi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="son24saatsatis">
+            <EntityTypeMapping TypeName="MarketOtomasyonDBModel.son24saatsatis">
+              <MappingFragment StoreEntitySet="son24saatsatis">
+                <ScalarProperty Name="satis_id" ColumnName="satis_id" />
+                <ScalarProperty Name="satis_tarihi" ColumnName="satis_tarihi" />
+                <ScalarProperty Name="calisan_id" ColumnName="calisan_id" />
+                <ScalarProperty Name="urun_id" ColumnName="urun_id" />
+                <ScalarProperty Name="satis_fiyat" ColumnName="satis_fiyat" />
+                <ScalarProperty Name="adet" ColumnName="adet" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StokBitenUrunler">
+            <EntityTypeMapping TypeName="MarketOtomasyonDBModel.StokBitenUrunler">
+              <MappingFragment StoreEntitySet="StokBitenUrunler">
+                <ScalarProperty Name="Urun_id" ColumnName="Urun_id" />
+                <ScalarProperty Name="Urun_adi" ColumnName="Urun_adi" />
+                <ScalarProperty Name="stok" ColumnName="stok" />
+                <ScalarProperty Name="Kategori_adi" ColumnName="Kategori_adi" />
+                <ScalarProperty Name="fiyat" ColumnName="fiyat" />
+                <ScalarProperty Name="alis_fiyat" ColumnName="alis_fiyat" />
+                <ScalarProperty Name="uretim_tarihi" ColumnName="uretim_tarihi" />
+                <ScalarProperty Name="tuketim_tarihi" ColumnName="tuketim_tarihi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TarihiGecmisUrunler">
+            <EntityTypeMapping TypeName="MarketOtomasyonDBModel.TarihiGecmisUrunler">
+              <MappingFragment StoreEntitySet="TarihiGecmisUrunler">
+                <ScalarProperty Name="Urun_id" ColumnName="Urun_id" />
+                <ScalarProperty Name="Urun_adi" ColumnName="Urun_adi" />
+                <ScalarProperty Name="stok" ColumnName="stok" />
+                <ScalarProperty Name="tuketim_tarihi" ColumnName="tuketim_tarihi" />
+                <ScalarProperty Name="uretim_tarihi" ColumnName="uretim_tarihi" />
+                <ScalarProperty Name="fiyat" ColumnName="fiyat" />
+                <ScalarProperty Name="Kategori_adi" ColumnName="Kategori_adi" />
+                <ScalarProperty Name="alis_fiyat" ColumnName="alis_fiyat" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
