@@ -194,6 +194,7 @@ namespace MarketOtomasyonu
             this.btnGunlukSatisRaporla.Size = new System.Drawing.Size(323, 49);
             this.btnGunlukSatisRaporla.TabIndex = 19;
             this.btnGunlukSatisRaporla.Text = "SON 24 SAATTE YAPILAN SATIŞLARI RAPORLA";
+            this.btnGunlukSatisRaporla.Click += new System.EventHandler(this.btnGunlukSatisRaporla_Click);
             // 
             // btnStokBitenRaporla
             // 
@@ -212,6 +213,7 @@ namespace MarketOtomasyonu
             this.btnStokBitenRaporla.Size = new System.Drawing.Size(324, 47);
             this.btnStokBitenRaporla.TabIndex = 18;
             this.btnStokBitenRaporla.Text = "STOK BİTEN ÜRÜNLER RAPORLA";
+            this.btnStokBitenRaporla.Click += new System.EventHandler(this.btnStokBitenRaporla_Click);
             // 
             // simpleButton3
             // 
@@ -238,6 +240,7 @@ namespace MarketOtomasyonu
             this.btnTarihiGecmisRaporla.Size = new System.Drawing.Size(323, 47);
             this.btnTarihiGecmisRaporla.TabIndex = 17;
             this.btnTarihiGecmisRaporla.Text = "TARİHİ GEÇMİŞ ÜRÜNLER RAPORLA";
+            this.btnTarihiGecmisRaporla.Click += new System.EventHandler(this.btnTarihiGecmisRaporla_Click);
             // 
             // gcSonSatislar
             // 

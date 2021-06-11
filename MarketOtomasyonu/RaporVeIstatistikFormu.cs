@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Entity;
 using DevExpress.XtraEditors;
+using DevExpress.XtraReports.UI;
+using DevExpress.LookAndFeel;
 
 namespace MarketOtomasyonu
 {
@@ -114,6 +116,36 @@ namespace MarketOtomasyonu
         private void btnTarihiGecmisÜrünler_Click(object sender, EventArgs e)
         {
             TarihiGecmisUrunCek();
+        }
+
+        private void btnGunlukSatisRaporla_Click(object sender, EventArgs e)
+        {
+            GunSatislariRapor sonSatislarRapor = new GunSatislariRapor();
+            ReportPrintTool printTool = new ReportPrintTool(sonSatislarRapor);
+            UserLookAndFeel lookAndFeel = new UserLookAndFeel(this);
+            lookAndFeel.UseDefaultLookAndFeel = false;
+            lookAndFeel.SkinName = "Office 2016 Colorful";
+            printTool.ShowRibbonPreview(lookAndFeel);
+        }
+
+        private void btnStokBitenRaporla_Click(object sender, EventArgs e)
+        {
+            StokBitenlerRapor stokBitenlerRaporu = new StokBitenlerRapor();
+            ReportPrintTool printTool = new ReportPrintTool(stokBitenlerRaporu);
+            UserLookAndFeel lookAndFeel = new UserLookAndFeel(this);
+            lookAndFeel.UseDefaultLookAndFeel = false;
+            lookAndFeel.SkinName = "Office 2016 Colorful";
+            printTool.ShowRibbonPreview(lookAndFeel);
+        }
+
+        private void btnTarihiGecmisRaporla_Click(object sender, EventArgs e)
+        {
+            TarihiGecmisUrunlerRapor tarihiGecmisler = new TarihiGecmisUrunlerRapor();
+            ReportPrintTool printTool = new ReportPrintTool(tarihiGecmisler);
+            UserLookAndFeel lookAndFeel = new UserLookAndFeel(this);
+            lookAndFeel.UseDefaultLookAndFeel = false;
+            lookAndFeel.SkinName = "Office 2016 Colorful";
+            printTool.ShowRibbonPreview(lookAndFeel);
         }
     }
 }
