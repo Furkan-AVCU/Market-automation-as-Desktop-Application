@@ -96,6 +96,7 @@ namespace MarketOtomasyonu
         private void btnSil_Click(object sender, EventArgs e)
         {
             var silinecekId = int.Parse(gridView1.GetFocusedRowCellValue("SatışID").ToString());
+            var eskiAdet = int.Parse(gridView1.GetFocusedRowCellValue("Adet").ToString());
             if (silinecekId.ToString() == string.Empty)
             {
                 XtraMessageBox.Show("Silme işleminde hata !", "Hata | Hikmet Market ! ", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -107,6 +108,7 @@ namespace MarketOtomasyonu
                                      select x).FirstOrDefault();
                 db.satislar.Remove(silinecekSatiş);
                 db.SaveChanges();
+                stokGuncelle(silinecekId, eskiAdet);
                 XtraMessageBox.Show("Satış Silindi !", "Başarılı | Hikmet Market ! ", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             SatisListele();
@@ -122,6 +124,7 @@ namespace MarketOtomasyonu
             else
             {
                 var guncellenecekId = int.Parse(gridView1.GetFocusedRowCellValue("SatışID").ToString());
+                var eskiAdet = int.Parse(gridView1.GetFocusedRowCellValue("Adet").ToString());
                 if (guncellenecekId.ToString() == string.Empty)
                 {
                     XtraMessageBox.Show("Güncelleme işleminde hata !", "Hata | Hikmet Market ! ", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -134,11 +137,19 @@ namespace MarketOtomasyonu
                     satis.satis_fiyat = float.Parse(txtSatisFiyat.Text.ToString());
                     satis.adet = int.Parse(txtAdet.Text.ToString());
                     satis.satis_tarihi = DateTime.Parse(deSatisTarihi.EditValue.ToString());
+                    stokGuncelle(guncellenecekId, eskiAdet - int.Parse(txtAdet.Text.ToString()));
                     db.SaveChanges();
                     XtraMessageBox.Show("Satış Güncellendi !", "Başarılı ! | Hikmet Market ", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 SatisListele();
             }
+        }
+
+        public void stokGuncelle(int id,int adet)
+        {
+            var urun = db.urunler.Find(id);
+            urun.stok = adet + urun.stok;
+            db.SaveChanges();
         }
 
         private void txtSatisFiyat_KeyPress(object sender, KeyPressEventArgs e)

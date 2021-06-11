@@ -289,6 +289,7 @@ namespace MarketOtomasyonu
             this.gridView1.AppearancePrint.Row.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridView1.GridControl = this.gcSonSatislar;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.AllowHtmlDrawGroups = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // gcStokBiten
@@ -309,7 +310,7 @@ namespace MarketOtomasyonu
             // 
             // gcTarihiGecmis
             // 
-            this.gcTarihiGecmis.Location = new System.Drawing.Point(12, 12);
+            this.gcTarihiGecmis.Location = new System.Drawing.Point(13, 12);
             this.gcTarihiGecmis.MainView = this.gridView3;
             this.gcTarihiGecmis.Name = "gcTarihiGecmis";
             this.gcTarihiGecmis.Size = new System.Drawing.Size(622, 425);
@@ -319,8 +320,26 @@ namespace MarketOtomasyonu
             // 
             // gridView3
             // 
+            this.gridView3.AppearancePrint.EvenRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.gridView3.AppearancePrint.EvenRow.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.gridView3.AppearancePrint.EvenRow.Options.UseBackColor = true;
+            this.gridView3.AppearancePrint.EvenRow.Options.UseTextOptions = true;
+            this.gridView3.AppearancePrint.EvenRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView3.AppearancePrint.FooterPanel.Options.UseTextOptions = true;
+            this.gridView3.AppearancePrint.FooterPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView3.AppearancePrint.GroupFooter.Options.UseTextOptions = true;
+            this.gridView3.AppearancePrint.GroupFooter.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView3.AppearancePrint.GroupRow.Options.UseTextOptions = true;
+            this.gridView3.AppearancePrint.GroupRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView3.AppearancePrint.HeaderPanel.Options.UseTextOptions = true;
+            this.gridView3.AppearancePrint.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView3.AppearancePrint.Lines.Options.UseTextOptions = true;
+            this.gridView3.AppearancePrint.Lines.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView3.AppearancePrint.Row.Options.UseTextOptions = true;
+            this.gridView3.AppearancePrint.Row.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridView3.GridControl = this.gcTarihiGecmis;
             this.gridView3.Name = "gridView3";
+            this.gridView3.OptionsPrint.EnableAppearanceEvenRow = true;
             this.gridView3.OptionsView.ShowGroupPanel = false;
             // 
             // RaporVeIstatistikFormu
