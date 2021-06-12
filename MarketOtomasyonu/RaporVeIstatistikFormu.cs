@@ -35,6 +35,7 @@ namespace MarketOtomasyonu
             gcSonSatislar.Visible = true;
             gcTarihiGecmis.Visible = false;
             gcStokBiten.Visible = false;
+            gcIadeler.Visible = false;
 
             var satisAl = from x in db.satislar
                           where x.satis_tarihi.ToString().Substring(0, 10) == bugün
@@ -55,6 +56,7 @@ namespace MarketOtomasyonu
             gcSonSatislar.Visible = false;
             gcTarihiGecmis.Visible = false;
             gcStokBiten.Visible = true;
+            gcIadeler.Visible = false;
             var urunAl = from x in db.urunler
                           where x.stok == 0
                           select new
@@ -82,22 +84,23 @@ namespace MarketOtomasyonu
             string bugün = yıl + "-" + ay + "-" + gün;
             DateTime bugun = Convert.ToDateTime(bugün);
 
-            gcSonSatislar.Visible = true;
-            gcTarihiGecmis.Visible = false;
+            gcTarihiGecmis.Visible = true;
+            gcSonSatislar.Visible = false;
             gcStokBiten.Visible = false;
+            gcIadeler.Visible = false;
 
             var urunAl = from x in db.urunler
                          where x.tuketim_tarihi < bugun
                           select new
                           {
-                              SatışID = x.Urun_id,
-                              SatışTarihi = x.Urun_adi,
-                              SatanKullanıcı = x.stok,
-                              Ürün = x.tuketim_tarihi,
-                              ÜrünID = x.uretim_tarihi,
-                              SatışFiyatı = x.fiyat,
+                              ÜrünID = x.Urun_id,
+                              ÜrünAdı = x.Urun_adi,
+                              Adet = x.stok,
+                              TüketimTarihi = x.tuketim_tarihi,
+                              ÜretimTarihi = x.uretim_tarihi,
+                              Fiyat = x.fiyat,
                           };
-            gcSonSatislar.DataSource = urunAl.ToList();
+            gcTarihiGecmis.DataSource = urunAl.ToList();
         }
         private void btnSon24SaatSatis_Click(object sender, EventArgs e)
         {
@@ -142,6 +145,52 @@ namespace MarketOtomasyonu
         {
             TarihiGecmisUrunlerRapor tarihiGecmisler = new TarihiGecmisUrunlerRapor();
             ReportPrintTool printTool = new ReportPrintTool(tarihiGecmisler);
+            UserLookAndFeel lookAndFeel = new UserLookAndFeel(this);
+            lookAndFeel.UseDefaultLookAndFeel = false;
+            lookAndFeel.SkinName = "Office 2016 Colorful";
+            printTool.ShowRibbonPreview(lookAndFeel);
+        }
+
+        private void btnIadeGoruntule_Click(object sender, EventArgs e)
+        {
+            IadeleriGoruntule();
+        }
+        public void IadeleriGoruntule() //Grid Control'e kayıtları çekiyor
+        {
+            string yıl = DateTime.Today.Year.ToString();
+            string ay = DateTime.Today.Month.ToString();
+            string gün = DateTime.Today.Day.ToString();
+            if (int.Parse(ay) < 10)
+            {
+                ay = "0" + ay;
+            }
+            string bugün = yıl + "-" + ay + "-" + gün;
+
+            gcSonSatislar.Visible = false;
+            gcTarihiGecmis.Visible = false;
+            gcStokBiten.Visible = false;
+            gcIadeler.Visible = true;
+
+            var iadeAl = from x in db.iadeler
+                          where x.iade_tarih.ToString().Substring(0, 10) == bugün
+                          select new
+                          {
+                              IadeID = x.iade_id,
+                              ÜrünID = x.urun_id,
+                              Neden = x.neden,
+                              ÜrünAdı = x.urunler.Urun_adi,
+                              ÜrünFiyatı = x.urunler.fiyat,
+                              Adet = x.adet,
+                              IadeTarihi = x.iade_tarih,
+                              SatanKullanıcı = x.calisanlar.Kullanici_adi,
+                          };
+            gcIadeler.DataSource = iadeAl.ToList();
+        }
+
+        private void btnIadeRaporla_Click(object sender, EventArgs e)
+        {
+            GunlukIadeRapor gunlukIadeRapor = new GunlukIadeRapor();
+            ReportPrintTool printTool = new ReportPrintTool(gunlukIadeRapor);
             UserLookAndFeel lookAndFeel = new UserLookAndFeel(this);
             lookAndFeel.UseDefaultLookAndFeel = false;
             lookAndFeel.SkinName = "Office 2016 Colorful";

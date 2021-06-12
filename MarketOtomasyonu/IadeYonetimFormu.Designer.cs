@@ -32,8 +32,12 @@ namespace MarketOtomasyonu
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IadeYonetimFormu));
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
-            this.btnEkle = new DevExpress.XtraEditors.SimpleButton();
+            this.groupControl5 = new DevExpress.XtraEditors.GroupControl();
             this.groupControl6 = new DevExpress.XtraEditors.GroupControl();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.txtNeden = new DevExpress.XtraRichEdit.RichEditControl();
+            this.btnEkle = new DevExpress.XtraEditors.SimpleButton();
             this.btnHepsiniGoruntule = new DevExpress.XtraEditors.SimpleButton();
             this.btnGuncelle = new DevExpress.XtraEditors.SimpleButton();
             this.btnSil = new DevExpress.XtraEditors.SimpleButton();
@@ -52,15 +56,13 @@ namespace MarketOtomasyonu
             this.cbCalisan = new DevExpress.XtraEditors.LookUpEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.txtNeden = new DevExpress.XtraRichEdit.RichEditControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.groupControl5 = new DevExpress.XtraEditors.GroupControl();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).BeginInit();
+            this.groupControl5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl6)).BeginInit();
             this.groupControl6.SuspendLayout();
             this.xtraTabPage2.SuspendLayout();
@@ -81,8 +83,6 @@ namespace MarketOtomasyonu
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).BeginInit();
-            this.groupControl5.SuspendLayout();
             this.SuspendLayout();
             // 
             // xtraTabControl1
@@ -123,24 +123,15 @@ namespace MarketOtomasyonu
             this.xtraTabPage1.Size = new System.Drawing.Size(322, 381);
             this.xtraTabPage1.Text = "İade Nedeni";
             // 
-            // btnEkle
+            // groupControl5
             // 
-            this.btnEkle.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnEkle.Appearance.Font = new System.Drawing.Font("Tahoma", 8F);
-            this.btnEkle.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnEkle.Appearance.Options.UseBackColor = true;
-            this.btnEkle.Appearance.Options.UseFont = true;
-            this.btnEkle.Appearance.Options.UseForeColor = true;
-            this.btnEkle.AppearancePressed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnEkle.AppearancePressed.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnEkle.AppearancePressed.Options.UseBackColor = true;
-            this.btnEkle.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnEkle.ImageOptions.SvgImage")));
-            this.btnEkle.Location = new System.Drawing.Point(13, 260);
-            this.btnEkle.Name = "btnEkle";
-            this.btnEkle.Size = new System.Drawing.Size(140, 47);
-            this.btnEkle.TabIndex = 15;
-            this.btnEkle.Text = "İADE EKLE";
-            this.btnEkle.Click += new System.EventHandler(this.btnEkle_Click);
+            this.groupControl5.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.groupControl5.Appearance.Options.UseBorderColor = true;
+            this.groupControl5.Controls.Add(this.groupControl6);
+            this.groupControl5.Location = new System.Drawing.Point(34, 3);
+            this.groupControl5.Name = "groupControl5";
+            this.groupControl5.Size = new System.Drawing.Size(252, 251);
+            this.groupControl5.TabIndex = 9;
             // 
             // groupControl6
             // 
@@ -161,6 +152,55 @@ namespace MarketOtomasyonu
             this.groupControl6.Size = new System.Drawing.Size(252, 240);
             this.groupControl6.TabIndex = 9;
             this.groupControl6.Text = "İade Nedeni";
+            // 
+            // simpleButton2
+            // 
+            this.simpleButton2.Enabled = false;
+            this.simpleButton2.Location = new System.Drawing.Point(0, 68);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
+            this.simpleButton2.Size = new System.Drawing.Size(26, 158);
+            this.simpleButton2.TabIndex = 24;
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Appearance.BackColor = System.Drawing.Color.White;
+            this.simpleButton1.Appearance.BorderColor = System.Drawing.Color.Transparent;
+            this.simpleButton1.Appearance.Options.UseBackColor = true;
+            this.simpleButton1.Appearance.Options.UseBorderColor = true;
+            this.simpleButton1.Enabled = false;
+            this.simpleButton1.Location = new System.Drawing.Point(0, 31);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
+            this.simpleButton1.Size = new System.Drawing.Size(235, 37);
+            this.simpleButton1.TabIndex = 10;
+            // 
+            // txtNeden
+            // 
+            this.txtNeden.Location = new System.Drawing.Point(0, 31);
+            this.txtNeden.Name = "txtNeden";
+            this.txtNeden.Size = new System.Drawing.Size(252, 209);
+            this.txtNeden.TabIndex = 23;
+            this.txtNeden.UseDeferredDataBindingNotifications = false;
+            // 
+            // btnEkle
+            // 
+            this.btnEkle.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnEkle.Appearance.Font = new System.Drawing.Font("Tahoma", 8F);
+            this.btnEkle.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnEkle.Appearance.Options.UseBackColor = true;
+            this.btnEkle.Appearance.Options.UseFont = true;
+            this.btnEkle.Appearance.Options.UseForeColor = true;
+            this.btnEkle.AppearancePressed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnEkle.AppearancePressed.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnEkle.AppearancePressed.Options.UseBackColor = true;
+            this.btnEkle.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnEkle.ImageOptions.SvgImage")));
+            this.btnEkle.Location = new System.Drawing.Point(13, 260);
+            this.btnEkle.Name = "btnEkle";
+            this.btnEkle.Size = new System.Drawing.Size(140, 47);
+            this.btnEkle.TabIndex = 15;
+            this.btnEkle.Text = "İADE EKLE";
+            this.btnEkle.Click += new System.EventHandler(this.btnEkle_Click);
             // 
             // btnHepsiniGoruntule
             // 
@@ -406,14 +446,6 @@ namespace MarketOtomasyonu
             this.groupControl2.Size = new System.Drawing.Size(238, 95);
             this.groupControl2.TabIndex = 26;
             // 
-            // txtNeden
-            // 
-            this.txtNeden.Location = new System.Drawing.Point(0, 31);
-            this.txtNeden.Name = "txtNeden";
-            this.txtNeden.Size = new System.Drawing.Size(252, 209);
-            this.txtNeden.TabIndex = 23;
-            this.txtNeden.UseDeferredDataBindingNotifications = false;
-            // 
             // gridControl1
             // 
             this.gridControl1.DataSource = typeof(MarketOtomasyonu.calisanlar);
@@ -464,38 +496,6 @@ namespace MarketOtomasyonu
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
             // 
-            // simpleButton1
-            // 
-            this.simpleButton1.Appearance.BackColor = System.Drawing.Color.White;
-            this.simpleButton1.Appearance.BorderColor = System.Drawing.Color.Transparent;
-            this.simpleButton1.Appearance.Options.UseBackColor = true;
-            this.simpleButton1.Appearance.Options.UseBorderColor = true;
-            this.simpleButton1.Enabled = false;
-            this.simpleButton1.Location = new System.Drawing.Point(0, 31);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.simpleButton1.Size = new System.Drawing.Size(235, 37);
-            this.simpleButton1.TabIndex = 10;
-            // 
-            // simpleButton2
-            // 
-            this.simpleButton2.Enabled = false;
-            this.simpleButton2.Location = new System.Drawing.Point(0, 68);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.simpleButton2.Size = new System.Drawing.Size(26, 158);
-            this.simpleButton2.TabIndex = 24;
-            // 
-            // groupControl5
-            // 
-            this.groupControl5.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.groupControl5.Appearance.Options.UseBorderColor = true;
-            this.groupControl5.Controls.Add(this.groupControl6);
-            this.groupControl5.Location = new System.Drawing.Point(34, 3);
-            this.groupControl5.Name = "groupControl5";
-            this.groupControl5.Size = new System.Drawing.Size(252, 251);
-            this.groupControl5.TabIndex = 9;
-            // 
             // IadeYonetimFormu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -510,6 +510,8 @@ namespace MarketOtomasyonu
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
             this.xtraTabControl1.ResumeLayout(false);
             this.xtraTabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).EndInit();
+            this.groupControl5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl6)).EndInit();
             this.groupControl6.ResumeLayout(false);
             this.xtraTabPage2.ResumeLayout(false);
@@ -533,8 +535,6 @@ namespace MarketOtomasyonu
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).EndInit();
-            this.groupControl5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

@@ -30,10 +30,10 @@ namespace MarketOtomasyonu
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraReports.UI.XRSummary xrSummary4 = new DevExpress.XtraReports.UI.XRSummary();
+            DevExpress.XtraReports.UI.XRSummary xrSummary1 = new DevExpress.XtraReports.UI.XRSummary();
             DevExpress.XtraReports.UI.XRSummary xrSummary2 = new DevExpress.XtraReports.UI.XRSummary();
             DevExpress.XtraReports.UI.XRSummary xrSummary3 = new DevExpress.XtraReports.UI.XRSummary();
-            DevExpress.XtraReports.UI.XRSummary xrSummary1 = new DevExpress.XtraReports.UI.XRSummary();
+            DevExpress.XtraReports.UI.XRSummary xrSummary4 = new DevExpress.XtraReports.UI.XRSummary();
             DevExpress.DataAccess.EntityFramework.EFConnectionParameters efConnectionParameters1 = new DevExpress.DataAccess.EntityFramework.EFConnectionParameters();
             DevExpress.DataAccess.EntityFramework.DBSetFilter dbSetFilter1 = new DevExpress.DataAccess.EntityFramework.DBSetFilter();
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
@@ -41,6 +41,7 @@ namespace MarketOtomasyonu
             this.pageInfo1 = new DevExpress.XtraReports.UI.XRPageInfo();
             this.pageInfo2 = new DevExpress.XtraReports.UI.XRPageInfo();
             this.ReportHeader = new DevExpress.XtraReports.UI.ReportHeaderBand();
+            this.xrLabel5 = new DevExpress.XtraReports.UI.XRLabel();
             this.label1 = new DevExpress.XtraReports.UI.XRLabel();
             this.GroupHeader1 = new DevExpress.XtraReports.UI.GroupHeaderBand();
             this.table1 = new DevExpress.XtraReports.UI.XRTable();
@@ -66,10 +67,14 @@ namespace MarketOtomasyonu
             this.tableCell16 = new DevExpress.XtraReports.UI.XRTableCell();
             this.ReportFooter = new DevExpress.XtraReports.UI.ReportFooterBand();
             this.panel1 = new DevExpress.XtraReports.UI.XRPanel();
-            this.label3 = new DevExpress.XtraReports.UI.XRLabel();
-            this.label5 = new DevExpress.XtraReports.UI.XRLabel();
-            this.label7 = new DevExpress.XtraReports.UI.XRLabel();
             this.label9 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel4 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label5 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel3 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label7 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label3 = new DevExpress.XtraReports.UI.XRLabel();
             this.efDataSource1 = new DevExpress.DataAccess.EntityFramework.EFDataSource(this.components);
             this.Title = new DevExpress.XtraReports.UI.XRControlStyle();
             this.DetailCaption1 = new DevExpress.XtraReports.UI.XRControlStyle();
@@ -79,11 +84,6 @@ namespace MarketOtomasyonu
             this.GrandTotalData1 = new DevExpress.XtraReports.UI.XRControlStyle();
             this.GrandTotalBackground1 = new DevExpress.XtraReports.UI.XRControlStyle();
             this.PageInfo = new DevExpress.XtraReports.UI.XRControlStyle();
-            this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel3 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel4 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel5 = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this.table1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.table2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.efDataSource1)).BeginInit();
@@ -125,6 +125,17 @@ namespace MarketOtomasyonu
             this.label1});
             this.ReportHeader.HeightF = 78.75001F;
             this.ReportHeader.Name = "ReportHeader";
+            // 
+            // xrLabel5
+            // 
+            this.xrLabel5.Font = new System.Drawing.Font("Arial", 15F);
+            this.xrLabel5.LocationFloat = new DevExpress.Utils.PointFloat(20.02536F, 45.75001F);
+            this.xrLabel5.Multiline = true;
+            this.xrLabel5.Name = "xrLabel5";
+            this.xrLabel5.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel5.SizeF = new System.Drawing.SizeF(152.0833F, 23F);
+            this.xrLabel5.StylePriority.UseFont = false;
+            this.xrLabel5.Text = "Hikmet Market";
             // 
             // label1
             // 
@@ -375,20 +386,29 @@ namespace MarketOtomasyonu
             this.panel1.SizeF = new System.Drawing.SizeF(847F, 49.38444F);
             this.panel1.StyleName = "GrandTotalBackground1";
             // 
-            // label3
+            // label9
             // 
-            this.label3.CanGrow = false;
-            this.label3.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumCount([Urun_id])")});
-            this.label3.LocationFloat = new DevExpress.Utils.PointFloat(120.7945F, 16.38444F);
-            this.label3.Name = "label3";
-            this.label3.SizeF = new System.Drawing.SizeF(51.31422F, 14.88444F);
-            this.label3.StyleName = "GrandTotalData1";
-            this.label3.StylePriority.UseTextAlignment = false;
-            xrSummary4.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
-            this.label3.Summary = xrSummary4;
-            this.label3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            this.label3.WordWrap = false;
+            this.label9.CanGrow = false;
+            this.label9.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSum([alis_fiyat]*[stok])")});
+            this.label9.LocationFloat = new DevExpress.Utils.PointFloat(785.561F, 16.38444F);
+            this.label9.Name = "label9";
+            this.label9.SizeF = new System.Drawing.SizeF(51.43903F, 14.88444F);
+            this.label9.StyleName = "GrandTotalData1";
+            this.label9.StylePriority.UseTextAlignment = false;
+            xrSummary1.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
+            this.label9.Summary = xrSummary1;
+            this.label9.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.label9.WordWrap = false;
+            // 
+            // xrLabel4
+            // 
+            this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(685.6526F, 16.38444F);
+            this.xrLabel4.Multiline = true;
+            this.xrLabel4.Name = "xrLabel4";
+            this.xrLabel4.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel4.SizeF = new System.Drawing.SizeF(112.5F, 23F);
+            this.xrLabel4.Text = "Toplam Maliyet :";
             // 
             // label5
             // 
@@ -397,13 +417,31 @@ namespace MarketOtomasyonu
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSum([fiyat]*[stok])")});
             this.label5.LocationFloat = new DevExpress.Utils.PointFloat(611.5472F, 16.38444F);
             this.label5.Name = "label5";
-            this.label5.SizeF = new System.Drawing.SizeF(21.82149F, 14.88444F);
+            this.label5.SizeF = new System.Drawing.SizeF(42.65485F, 14.88444F);
             this.label5.StyleName = "GrandTotalData1";
             this.label5.StylePriority.UseTextAlignment = false;
             xrSummary2.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
             this.label5.Summary = xrSummary2;
             this.label5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             this.label5.WordWrap = false;
+            // 
+            // xrLabel3
+            // 
+            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(508.2618F, 16.38444F);
+            this.xrLabel3.Multiline = true;
+            this.xrLabel3.Name = "xrLabel3";
+            this.xrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel3.SizeF = new System.Drawing.SizeF(100F, 23F);
+            this.xrLabel3.Text = "Toplam Değer :";
+            // 
+            // xrLabel2
+            // 
+            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(278.374F, 16.38444F);
+            this.xrLabel2.Multiline = true;
+            this.xrLabel2.Name = "xrLabel2";
+            this.xrLabel2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel2.SizeF = new System.Drawing.SizeF(133.3895F, 23F);
+            this.xrLabel2.Text = "Toplam Ürün Sayısı :";
             // 
             // label7
             // 
@@ -412,7 +450,7 @@ namespace MarketOtomasyonu
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSum([stok])")});
             this.label7.LocationFloat = new DevExpress.Utils.PointFloat(411.7635F, 16.38444F);
             this.label7.Name = "label7";
-            this.label7.SizeF = new System.Drawing.SizeF(21.82149F, 14.88444F);
+            this.label7.SizeF = new System.Drawing.SizeF(37.4465F, 14.88444F);
             this.label7.StyleName = "GrandTotalData1";
             this.label7.StylePriority.UseTextAlignment = false;
             xrSummary3.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
@@ -420,20 +458,29 @@ namespace MarketOtomasyonu
             this.label7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             this.label7.WordWrap = false;
             // 
-            // label9
+            // xrLabel1
             // 
-            this.label9.CanGrow = false;
-            this.label9.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSum([alis_fiyat]*[stok])")});
-            this.label9.LocationFloat = new DevExpress.Utils.PointFloat(785.561F, 16.38444F);
-            this.label9.Name = "label9";
-            this.label9.SizeF = new System.Drawing.SizeF(36.31397F, 14.88444F);
-            this.label9.StyleName = "GrandTotalData1";
-            this.label9.StylePriority.UseTextAlignment = false;
-            xrSummary1.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
-            this.label9.Summary = xrSummary1;
-            this.label9.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            this.label9.WordWrap = false;
+            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(38.54167F, 16.38444F);
+            this.xrLabel1.Multiline = true;
+            this.xrLabel1.Name = "xrLabel1";
+            this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel1.SizeF = new System.Drawing.SizeF(100F, 23F);
+            this.xrLabel1.Text = "Ürün Çeşidi :";
+            // 
+            // label3
+            // 
+            this.label3.CanGrow = false;
+            this.label3.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumCount([Urun_id])")});
+            this.label3.LocationFloat = new DevExpress.Utils.PointFloat(120.7945F, 16.38444F);
+            this.label3.Name = "label3";
+            this.label3.SizeF = new System.Drawing.SizeF(65.89754F, 14.88444F);
+            this.label3.StyleName = "GrandTotalData1";
+            this.label3.StylePriority.UseTextAlignment = false;
+            xrSummary4.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
+            this.label3.Summary = xrSummary4;
+            this.label3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.label3.WordWrap = false;
             // 
             // efDataSource1
             // 
@@ -527,53 +574,6 @@ namespace MarketOtomasyonu
             this.PageInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(70)))), ((int)(((byte)(80)))));
             this.PageInfo.Name = "PageInfo";
             this.PageInfo.Padding = new DevExpress.XtraPrinting.PaddingInfo(6, 6, 0, 0, 100F);
-            // 
-            // xrLabel1
-            // 
-            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(38.54167F, 16.38444F);
-            this.xrLabel1.Multiline = true;
-            this.xrLabel1.Name = "xrLabel1";
-            this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel1.SizeF = new System.Drawing.SizeF(100F, 23F);
-            this.xrLabel1.Text = "Ürün Çeşidi :";
-            // 
-            // xrLabel2
-            // 
-            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(278.374F, 16.38444F);
-            this.xrLabel2.Multiline = true;
-            this.xrLabel2.Name = "xrLabel2";
-            this.xrLabel2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel2.SizeF = new System.Drawing.SizeF(133.3895F, 23F);
-            this.xrLabel2.Text = "Toplam Ürün Sayısı :";
-            // 
-            // xrLabel3
-            // 
-            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(508.2618F, 16.38444F);
-            this.xrLabel3.Multiline = true;
-            this.xrLabel3.Name = "xrLabel3";
-            this.xrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel3.SizeF = new System.Drawing.SizeF(100F, 23F);
-            this.xrLabel3.Text = "Toplam Değer :";
-            // 
-            // xrLabel4
-            // 
-            this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(685.6526F, 16.38444F);
-            this.xrLabel4.Multiline = true;
-            this.xrLabel4.Name = "xrLabel4";
-            this.xrLabel4.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel4.SizeF = new System.Drawing.SizeF(112.5F, 23F);
-            this.xrLabel4.Text = "Toplam Maliyet :";
-            // 
-            // xrLabel5
-            // 
-            this.xrLabel5.Font = new System.Drawing.Font("Arial", 15F);
-            this.xrLabel5.LocationFloat = new DevExpress.Utils.PointFloat(20.02536F, 45.75001F);
-            this.xrLabel5.Multiline = true;
-            this.xrLabel5.Name = "xrLabel5";
-            this.xrLabel5.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
-            this.xrLabel5.SizeF = new System.Drawing.SizeF(152.0833F, 23F);
-            this.xrLabel5.StylePriority.UseFont = false;
-            this.xrLabel5.Text = "Hikmet Market";
             // 
             // TarihiGecmisUrunlerRapor
             // 

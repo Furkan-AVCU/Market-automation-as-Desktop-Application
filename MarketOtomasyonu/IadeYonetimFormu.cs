@@ -97,6 +97,7 @@ namespace MarketOtomasyonu
         private void btnSil_Click(object sender, EventArgs e)
         {
             var silinecekId = int.Parse(gridView1.GetFocusedRowCellValue("IadeID").ToString());
+            var eskiAdet = int.Parse(gridView1.GetFocusedRowCellValue("Adet").ToString());
             if (silinecekId.ToString() == string.Empty)
             {
                 XtraMessageBox.Show("Silme işleminde hata !", "Hata | Hikmet Market ! ", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -107,6 +108,7 @@ namespace MarketOtomasyonu
                                       where x.iade_id == silinecekId
                                       select x).FirstOrDefault();
                 db.iadeler.Remove(silinecekIade);
+                stokGuncelle(silinecekId, int.Parse(txtAdet.Text));
                 db.SaveChanges();
                 XtraMessageBox.Show("Iade Silindi !", "Başarılı | Hikmet Market ! ", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -123,6 +125,7 @@ namespace MarketOtomasyonu
             else
             {
                 var guncellenecekId = int.Parse(gridView1.GetFocusedRowCellValue("IadeID").ToString());
+                var eskiAdet = int.Parse(gridView1.GetFocusedRowCellValue("Adet").ToString());
                 if (guncellenecekId.ToString() == string.Empty)
                 {
                     XtraMessageBox.Show("Güncelleme işleminde hata !", "Hata | Hikmet Market ! ", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -136,6 +139,7 @@ namespace MarketOtomasyonu
                     iade.adet = int.Parse(txtAdet.Text.ToString());
                     iade.iade_tarih = DateTime.Parse(deIadeTarihi.EditValue.ToString());
                     db.SaveChanges();
+                    stokGuncelle(guncellenecekId, eskiAdet - int.Parse(txtAdet.Text));
                     XtraMessageBox.Show("Iade Güncellendi !", "Başarılı ! | Hikmet Market ", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 IadeListele();
@@ -159,12 +163,20 @@ namespace MarketOtomasyonu
                 iade.iade_tarih = DateTime.Parse(deIadeTarihi.EditValue.ToString());
                 db.iadeler.Add(iade);
                 db.SaveChanges();
+                stokGuncelle(int.Parse(cbUrun.Text), int.Parse(txtAdet.Text));
 
                 XtraMessageBox.Show("Yeni İade eklendi ! !", "Başarılı | Hikmet Market  ! ", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             IadeListele();
         }
 
-        
+        public void stokGuncelle(int id, int adet)
+        {
+            var urun = db.urunler.Find(id);
+            urun.stok = adet + urun.stok;
+            db.SaveChanges();
+        }
+
+
     }
 }

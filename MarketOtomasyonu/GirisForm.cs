@@ -17,7 +17,7 @@ namespace MarketOtomasyonu
         {
             InitializeComponent();
         }
-            MarketYonetimFormu frm = new MarketYonetimFormu();
+            CalisanYonetimFormu frm = new CalisanYonetimFormu();
             MarketOtomasyonDBEntities db = new MarketOtomasyonDBEntities();
             private void btnGiris_Click(object sender, EventArgs e)
             {

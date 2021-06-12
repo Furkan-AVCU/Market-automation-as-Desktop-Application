@@ -122,6 +122,12 @@
     <Compile Include="GirisForm.Designer.cs">
       <DependentUpon>GirisForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GunlukIadeRapor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GunlukIadeRapor.Designer.cs">
+      <DependentUpon>GunlukIadeRapor.cs</DependentUpon>
+    </Compile>
     <Compile Include="GunSatislariRapor.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -140,11 +146,11 @@
     <Compile Include="kategoriler.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="MarketYonetimFormu.cs">
+    <Compile Include="CalisanYonetimFormu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MarketYonetimFormu.Designer.cs">
-      <DependentUpon>MarketYonetimFormu.cs</DependentUpon>
+    <Compile Include="CalisanYonetimFormu.Designer.cs">
+      <DependentUpon>CalisanYonetimFormu.cs</DependentUpon>
     </Compile>
     <Compile Include="Model1.Context.cs">
       <AutoGen>True</AutoGen>
@@ -217,14 +223,17 @@
     <EmbeddedResource Include="GirisForm.resx">
       <DependentUpon>GirisForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GunlukIadeRapor.resx">
+      <DependentUpon>GunlukIadeRapor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GunSatislariRapor.resx">
       <DependentUpon>GunSatislariRapor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="IadeYonetimFormu.resx">
       <DependentUpon>IadeYonetimFormu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MarketYonetimFormu.resx">
-      <DependentUpon>MarketYonetimFormu.cs</DependentUpon>
+    <EmbeddedResource Include="CalisanYonetimFormu.resx">
+      <DependentUpon>CalisanYonetimFormu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

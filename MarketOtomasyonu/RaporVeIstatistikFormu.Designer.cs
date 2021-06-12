@@ -34,12 +34,12 @@ namespace MarketOtomasyonu
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.btnSon24SaatSatis = new DevExpress.XtraEditors.SimpleButton();
             this.btnStokBitenUrunler = new DevExpress.XtraEditors.SimpleButton();
-            this.btnSil = new DevExpress.XtraEditors.SimpleButton();
+            this.btnIadeGoruntule = new DevExpress.XtraEditors.SimpleButton();
             this.btnTarihiGecmisÜrünler = new DevExpress.XtraEditors.SimpleButton();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
             this.btnGunlukSatisRaporla = new DevExpress.XtraEditors.SimpleButton();
             this.btnStokBitenRaporla = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnIadeRaporla = new DevExpress.XtraEditors.SimpleButton();
             this.btnTarihiGecmisRaporla = new DevExpress.XtraEditors.SimpleButton();
             this.gcSonSatislar = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -47,6 +47,8 @@ namespace MarketOtomasyonu
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gcTarihiGecmis = new DevExpress.XtraGrid.GridControl();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gcIadeler = new DevExpress.XtraGrid.GridControl();
+            this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
@@ -57,6 +59,8 @@ namespace MarketOtomasyonu
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcTarihiGecmis)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcIadeler)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
             this.SuspendLayout();
             // 
             // xtraTabControl1
@@ -90,7 +94,7 @@ namespace MarketOtomasyonu
             this.xtraTabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.xtraTabPage1.Controls.Add(this.btnSon24SaatSatis);
             this.xtraTabPage1.Controls.Add(this.btnStokBitenUrunler);
-            this.xtraTabPage1.Controls.Add(this.btnSil);
+            this.xtraTabPage1.Controls.Add(this.btnIadeGoruntule);
             this.xtraTabPage1.Controls.Add(this.btnTarihiGecmisÜrünler);
             this.xtraTabPage1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("xtraTabPage1.ImageOptions.SvgImage")));
             this.xtraTabPage1.Name = "xtraTabPage1";
@@ -113,7 +117,7 @@ namespace MarketOtomasyonu
             this.btnSon24SaatSatis.Name = "btnSon24SaatSatis";
             this.btnSon24SaatSatis.Size = new System.Drawing.Size(323, 49);
             this.btnSon24SaatSatis.TabIndex = 15;
-            this.btnSon24SaatSatis.Text = "SON 24 SAATTE YAPILAN SATIŞLAR";
+            this.btnSon24SaatSatis.Text = "BUGÜN YAPILAN SATIŞLAR";
             this.btnSon24SaatSatis.Click += new System.EventHandler(this.btnSon24SaatSatis_Click);
             // 
             // btnStokBitenUrunler
@@ -135,18 +139,19 @@ namespace MarketOtomasyonu
             this.btnStokBitenUrunler.Text = "STOK BİTEN ÜRÜNLER";
             this.btnStokBitenUrunler.Click += new System.EventHandler(this.btnStokBitenUrunler_Click);
             // 
-            // btnSil
+            // btnIadeGoruntule
             // 
-            this.btnSil.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnSil.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.btnSil.Appearance.Options.UseBackColor = true;
-            this.btnSil.Appearance.Options.UseFont = true;
-            this.btnSil.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnSil.ImageOptions.SvgImage")));
-            this.btnSil.Location = new System.Drawing.Point(-1, 226);
-            this.btnSil.Name = "btnSil";
-            this.btnSil.Size = new System.Drawing.Size(324, 47);
-            this.btnSil.TabIndex = 9;
-            this.btnSil.Text = "İADE SİL";
+            this.btnIadeGoruntule.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnIadeGoruntule.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnIadeGoruntule.Appearance.Options.UseBackColor = true;
+            this.btnIadeGoruntule.Appearance.Options.UseFont = true;
+            this.btnIadeGoruntule.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnIadeGoruntule.ImageOptions.SvgImage")));
+            this.btnIadeGoruntule.Location = new System.Drawing.Point(-1, 226);
+            this.btnIadeGoruntule.Name = "btnIadeGoruntule";
+            this.btnIadeGoruntule.Size = new System.Drawing.Size(324, 47);
+            this.btnIadeGoruntule.TabIndex = 9;
+            this.btnIadeGoruntule.Text = "BUGÜN İADE EDİLEN ÜRÜNLER";
+            this.btnIadeGoruntule.Click += new System.EventHandler(this.btnIadeGoruntule_Click);
             // 
             // btnTarihiGecmisÜrünler
             // 
@@ -170,7 +175,7 @@ namespace MarketOtomasyonu
             this.xtraTabPage2.Appearance.PageClient.Options.UseBackColor = true;
             this.xtraTabPage2.Controls.Add(this.btnGunlukSatisRaporla);
             this.xtraTabPage2.Controls.Add(this.btnStokBitenRaporla);
-            this.xtraTabPage2.Controls.Add(this.simpleButton3);
+            this.xtraTabPage2.Controls.Add(this.btnIadeRaporla);
             this.xtraTabPage2.Controls.Add(this.btnTarihiGecmisRaporla);
             this.xtraTabPage2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("xtraTabPage2.ImageOptions.SvgImage")));
             this.xtraTabPage2.Name = "xtraTabPage2";
@@ -193,7 +198,7 @@ namespace MarketOtomasyonu
             this.btnGunlukSatisRaporla.Name = "btnGunlukSatisRaporla";
             this.btnGunlukSatisRaporla.Size = new System.Drawing.Size(323, 49);
             this.btnGunlukSatisRaporla.TabIndex = 19;
-            this.btnGunlukSatisRaporla.Text = "SON 24 SAATTE YAPILAN SATIŞLARI RAPORLA";
+            this.btnGunlukSatisRaporla.Text = "BUGÜN SATILAN ÜRÜNLERİ RAPORLA";
             this.btnGunlukSatisRaporla.Click += new System.EventHandler(this.btnGunlukSatisRaporla_Click);
             // 
             // btnStokBitenRaporla
@@ -212,21 +217,22 @@ namespace MarketOtomasyonu
             this.btnStokBitenRaporla.Name = "btnStokBitenRaporla";
             this.btnStokBitenRaporla.Size = new System.Drawing.Size(324, 47);
             this.btnStokBitenRaporla.TabIndex = 18;
-            this.btnStokBitenRaporla.Text = "STOK BİTEN ÜRÜNLER RAPORLA";
+            this.btnStokBitenRaporla.Text = "STOK BİTEN ÜRÜNLERİ RAPORLA";
             this.btnStokBitenRaporla.Click += new System.EventHandler(this.btnStokBitenRaporla_Click);
             // 
-            // simpleButton3
+            // btnIadeRaporla
             // 
-            this.simpleButton3.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.simpleButton3.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.simpleButton3.Appearance.Options.UseBackColor = true;
-            this.simpleButton3.Appearance.Options.UseFont = true;
-            this.simpleButton3.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton3.ImageOptions.SvgImage")));
-            this.simpleButton3.Location = new System.Drawing.Point(-1, 238);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(324, 47);
-            this.simpleButton3.TabIndex = 16;
-            this.simpleButton3.Text = "İADE SİL";
+            this.btnIadeRaporla.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnIadeRaporla.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnIadeRaporla.Appearance.Options.UseBackColor = true;
+            this.btnIadeRaporla.Appearance.Options.UseFont = true;
+            this.btnIadeRaporla.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnIadeRaporla.ImageOptions.SvgImage")));
+            this.btnIadeRaporla.Location = new System.Drawing.Point(-1, 238);
+            this.btnIadeRaporla.Name = "btnIadeRaporla";
+            this.btnIadeRaporla.Size = new System.Drawing.Size(324, 47);
+            this.btnIadeRaporla.TabIndex = 16;
+            this.btnIadeRaporla.Text = "BUGÜN İADE EDİLEN ÜRÜNLERİ RAPORLA";
+            this.btnIadeRaporla.Click += new System.EventHandler(this.btnIadeRaporla_Click);
             // 
             // btnTarihiGecmisRaporla
             // 
@@ -239,7 +245,7 @@ namespace MarketOtomasyonu
             this.btnTarihiGecmisRaporla.Name = "btnTarihiGecmisRaporla";
             this.btnTarihiGecmisRaporla.Size = new System.Drawing.Size(323, 47);
             this.btnTarihiGecmisRaporla.TabIndex = 17;
-            this.btnTarihiGecmisRaporla.Text = "TARİHİ GEÇMİŞ ÜRÜNLER RAPORLA";
+            this.btnTarihiGecmisRaporla.Text = "TARİHİ GEÇMİŞ ÜRÜNLERİ RAPORLA";
             this.btnTarihiGecmisRaporla.Click += new System.EventHandler(this.btnTarihiGecmisRaporla_Click);
             // 
             // gcSonSatislar
@@ -342,12 +348,47 @@ namespace MarketOtomasyonu
             this.gridView3.OptionsPrint.EnableAppearanceEvenRow = true;
             this.gridView3.OptionsView.ShowGroupPanel = false;
             // 
+            // gcIadeler
+            // 
+            this.gcIadeler.Location = new System.Drawing.Point(13, 12);
+            this.gcIadeler.MainView = this.gridView4;
+            this.gcIadeler.Name = "gcIadeler";
+            this.gcIadeler.Size = new System.Drawing.Size(622, 425);
+            this.gcIadeler.TabIndex = 13;
+            this.gcIadeler.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView4});
+            // 
+            // gridView4
+            // 
+            this.gridView4.AppearancePrint.EvenRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.gridView4.AppearancePrint.EvenRow.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.gridView4.AppearancePrint.EvenRow.Options.UseBackColor = true;
+            this.gridView4.AppearancePrint.EvenRow.Options.UseTextOptions = true;
+            this.gridView4.AppearancePrint.EvenRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView4.AppearancePrint.FooterPanel.Options.UseTextOptions = true;
+            this.gridView4.AppearancePrint.FooterPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView4.AppearancePrint.GroupFooter.Options.UseTextOptions = true;
+            this.gridView4.AppearancePrint.GroupFooter.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView4.AppearancePrint.GroupRow.Options.UseTextOptions = true;
+            this.gridView4.AppearancePrint.GroupRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView4.AppearancePrint.HeaderPanel.Options.UseTextOptions = true;
+            this.gridView4.AppearancePrint.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView4.AppearancePrint.Lines.Options.UseTextOptions = true;
+            this.gridView4.AppearancePrint.Lines.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView4.AppearancePrint.Row.Options.UseTextOptions = true;
+            this.gridView4.AppearancePrint.Row.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView4.GridControl = this.gcIadeler;
+            this.gridView4.Name = "gridView4";
+            this.gridView4.OptionsPrint.EnableAppearanceEvenRow = true;
+            this.gridView4.OptionsView.ShowGroupPanel = false;
+            // 
             // RaporVeIstatistikFormu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(974, 447);
+            this.Controls.Add(this.gcIadeler);
             this.Controls.Add(this.gcTarihiGecmis);
             this.Controls.Add(this.gcStokBiten);
             this.Controls.Add(this.xtraTabControl1);
@@ -365,6 +406,8 @@ namespace MarketOtomasyonu
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcTarihiGecmis)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcIadeler)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -375,18 +418,20 @@ namespace MarketOtomasyonu
         private DevExpress.XtraTab.XtraTabPage xtraTabPage1;
         private DevExpress.XtraEditors.SimpleButton btnStokBitenUrunler;
         private DevExpress.XtraEditors.SimpleButton btnTarihiGecmisÜrünler;
-        private DevExpress.XtraEditors.SimpleButton btnSil;
+        private DevExpress.XtraEditors.SimpleButton btnIadeGoruntule;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage2;
         private DevExpress.XtraGrid.GridControl gcSonSatislar;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraEditors.SimpleButton btnSon24SaatSatis;
         private DevExpress.XtraEditors.SimpleButton btnGunlukSatisRaporla;
         private DevExpress.XtraEditors.SimpleButton btnStokBitenRaporla;
-        private DevExpress.XtraEditors.SimpleButton simpleButton3;
+        private DevExpress.XtraEditors.SimpleButton btnIadeRaporla;
         private DevExpress.XtraEditors.SimpleButton btnTarihiGecmisRaporla;
         private DevExpress.XtraGrid.GridControl gcStokBiten;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private DevExpress.XtraGrid.GridControl gcTarihiGecmis;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
+        private DevExpress.XtraGrid.GridControl gcIadeler;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
     }
 }

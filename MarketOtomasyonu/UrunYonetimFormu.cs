@@ -233,5 +233,37 @@ namespace MarketOtomasyonu
                 UrunListele();
             }
         }
+
+        private void btnAra_Click(object sender, EventArgs e)
+        {
+            if (txtAranacakUrunAdi.Text == string.Empty || txtAranacakUrunAdi.Text == null)
+            {
+                XtraMessageBox.Show("Lütfen Boş Kutucuk Bırakmayınız !", "Hata ! | Hikmet Market Uyarıyor ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+
+                var urunAl = from x in db.urunler
+                                    where x.Urun_adi.Contains(txtAranacakUrunAdi.Text.ToString())&& x.Urun_adi.StartsWith(txtAranacakUrunAdi.Text.Substring(0,txtAranacakUrunAdi.Text.Length))
+                                    select new
+                                    {
+                                        ÜrünID = x.Urun_id,
+                                        Ad = x.Urun_adi,
+                                        Fiyat = x.fiyat,
+                                        Stok = x.stok,
+                                        AlışFiyatı = x.alis_fiyat,
+                                        Kategori = x.kategoriler.Kategori_adi,
+                                        ÜretimTarihi = x.uretim_tarihi,
+                                        TüketimTarihi = x.tuketim_tarihi,
+
+                                    };
+                if (urunAl.ToList() == null || urunAl.Count() == 0)
+                {
+                    XtraMessageBox.Show("Aranan Ürün Bulunamadı !", "Hata ! | Hikmet Market Uyarıyor ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else { gridControl1.DataSource = urunAl.ToList(); }
+
+            }
+        }
     }
 }

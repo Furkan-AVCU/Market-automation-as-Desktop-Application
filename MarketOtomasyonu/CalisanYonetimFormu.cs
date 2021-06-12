@@ -12,9 +12,9 @@ using DevExpress.XtraEditors;
 
 namespace MarketOtomasyonu
 {
-    public partial class MarketYonetimFormu : Form
+    public partial class CalisanYonetimFormu : Form
     {
-        public MarketYonetimFormu()
+        public CalisanYonetimFormu()
         {
             InitializeComponent();
             
@@ -91,6 +91,9 @@ namespace MarketOtomasyonu
                 || txtKullaniciAdi.Text == null||txtParola.Text == string.Empty || txtParola.Text == null||cbRol.Properties.DisplayMember.ToString()==string.Empty)
             {
                     XtraMessageBox.Show("Lütfen Bilgileri Tam giriniz", "Hata | Hikmet Market Uyarıyor ! ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }else if (txtTc.Text.Length<11)
+            {
+                XtraMessageBox.Show("Lütfen TC numarasını 11 Hane olarak girin !", "Hata | Hikmet Market Uyarıyor ! ", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
                 else if (TcVarMi(txtTc.Text) && KullaniciAdiVarMi(txtKullaniciAdi.Text)) // AYNI TC ve kullanıcı adıKULLANILMIŞ MI SORGUSU
                 {
@@ -136,21 +139,23 @@ namespace MarketOtomasyonu
 
         private void btnSil_Click(object sender, EventArgs e)
         {
-            var silinecekId =int.Parse(gridView1.GetFocusedRowCellValue("ÇalışanID").ToString());
-            if (silinecekId.ToString()== string.Empty)
-            {
-                XtraMessageBox.Show("Silme işleminde hata !", "Hata | Hikmet Market ! ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (XtraMessageBox.Show("Çalışanı silmek istediğinden emin misin ?", "Emin misin ? | Hikmet Market ", MessageBoxButtons.YesNo,MessageBoxIcon.Warning) != DialogResult.No) {
+                var silinecekId = int.Parse(gridView1.GetFocusedRowCellValue("ÇalışanID").ToString());
+                if (silinecekId.ToString() == string.Empty)
+                {
+                    XtraMessageBox.Show("Silme işleminde hata !", "Hata | Hikmet Market ! ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    var silinecekCalisan = (from x in db.calisanlar
+                                            where x.Calisan_id == silinecekId
+                                            select x).FirstOrDefault();
+                    db.calisanlar.Remove(silinecekCalisan);
+                    db.SaveChanges();
+                    CalisanListele();
+                    XtraMessageBox.Show("Çalışan Silindi !", "Küçüldük | Hikmet Market ! ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
-            else
-            {
-                var silinecekCalisan = (from x in db.calisanlar
-                                        where x.Calisan_id == silinecekId
-                                        select x).FirstOrDefault();
-                db.calisanlar.Remove(silinecekCalisan);
-                db.SaveChanges();
-                XtraMessageBox.Show("Çalışan Silindi !", "Küçüldük | Hikmet Market ! ", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            CalisanListele();  
         }
 
         private void btnGuncelle_Click(object sender, EventArgs e)
@@ -159,28 +164,60 @@ namespace MarketOtomasyonu
                 || txtKullaniciAdi.Text == null || txtParola.Text == string.Empty || txtParola.Text == null || cbRol.Properties.DisplayMember.ToString() == string.Empty)
             {
                 XtraMessageBox.Show("Lütfen Bilgileri Tam giriniz", "Hata | Hikmet Market Uyarıyor ! ", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }else
+            }
+            else if (txtTc.Text.Length < 11)
+            {
+                XtraMessageBox.Show("Lütfen TC numarasını 11 Hane olarak girin !", "Hata | Hikmet Market Uyarıyor ! ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
             {
                 var guncellenecekId = int.Parse(gridView1.GetFocusedRowCellValue("ÇalışanID").ToString());
-                //if (TcVarMi(txtTc.Text) && KullaniciAdiVarMi(txtKullaniciAdi.Text)) // AYNI TC ve kullanıcı adıKULLANILMIŞ MI SORGUSU
-                //{
-                //    XtraMessageBox.Show("Bu Tc ve Kullanıcı adı Zaten Kayıtlı !", "Hata | Hikmet Market Uyarıyor ! ", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //}
                 if (guncellenecekId.ToString() == string.Empty)
                 {
                     XtraMessageBox.Show("Güncelleme işleminde hata !", "Hata | Hikmet Market ! ", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
+                    string eskiTc = gridView1.GetFocusedRowCellValue("TC").ToString();
                     var calisan = db.calisanlar.Find(guncellenecekId);
-                    calisan.Calisan_adi = txtAdi.Text;
-                    calisan.Calisan_soyadi = txtSoyad.Text;
-                    calisan.Calisan_tc = txtTc.Text;
-                    calisan.Kullanici_adi = txtKullaniciAdi.Text;
-                    calisan.Parola = txtParola.Text;
-                    calisan.Rol_id = int.Parse(cbRol.EditValue.ToString());
-                    db.SaveChanges();
-                    XtraMessageBox.Show("Çalışan Güncellendi !", "Başarılı ! | Hikmet Market ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (eskiTc==txtTc.Text)
+                    {
+                        calisan.Calisan_adi = txtAdi.Text;
+                        calisan.Calisan_soyadi = txtSoyad.Text;
+                        calisan.Calisan_tc = txtTc.Text;
+                        calisan.Kullanici_adi = txtKullaniciAdi.Text;
+                        calisan.Parola = txtParola.Text;
+                        calisan.Rol_id = int.Parse(cbRol.EditValue.ToString());
+                        db.SaveChanges();
+                        XtraMessageBox.Show("Çalışan Güncellendi !", "Başarılı ! | Hikmet Market ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        try {
+                            var calisanTc = from x in db.calisanlar
+                                            where x.Calisan_tc == txtTc.Text
+                                            select x;
+                            if (calisanTc.ToList() == null || calisanTc.Count() == 0)
+                            {
+                                calisan.Calisan_adi = txtAdi.Text;
+                                calisan.Calisan_soyadi = txtSoyad.Text;
+                                calisan.Calisan_tc = txtTc.Text;
+                                calisan.Kullanici_adi = txtKullaniciAdi.Text;
+                                calisan.Parola = txtParola.Text;
+                                calisan.Rol_id = int.Parse(cbRol.EditValue.ToString());
+                                db.SaveChanges();
+                                XtraMessageBox.Show("Çalışan Güncellendi !", "Başarılı ! | Hikmet Market ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            else
+                            {
+                                XtraMessageBox.Show("Bu Tc Zaten Kayıtlı !", "Hata | Hikmet Market Uyarıyor ! ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                        }
+                        catch
+                        {
+                            XtraMessageBox.Show("Güncelleme işleminde hata !", "Hata | Hikmet Market ! ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
                 }
                 CalisanListele();
             }
@@ -244,6 +281,37 @@ namespace MarketOtomasyonu
         private void btnCalisanlarinHepsiniGoster_Click(object sender, EventArgs e)
         {
             CalisanListele();
+        }
+
+        private void btnAra_Click(object sender, EventArgs e)
+        {
+            if (txtAranacakMetin.Text == string.Empty || txtAranacakMetin.Text == null)
+            {
+                XtraMessageBox.Show("Lütfen Boş Kutucuk Bırakmayınız !", "Hata ! | Hikmet Market Uyarıyor ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                 
+                        var calisanlariAl = from x in db.calisanlar
+                                            where x.Calisan_tc.Contains(txtAranacakMetin.Text.ToString()) && x.Calisan_tc.StartsWith(txtAranacakMetin.Text.Substring(0, txtAranacakMetin.Text.Length))
+                                            select new
+                                            {
+                                                ÇalışanID = x.Calisan_id,
+                                                Ad = x.Calisan_adi,
+                                                Soyad = x.Calisan_soyadi,
+                                                TC = x.Calisan_tc,
+                                                KullanıcıAdı = x.Kullanici_adi,
+                                                Parola = x.Parola,
+                                                Rol = x.roller.Rol_adi,
+
+                                            };
+                    if (calisanlariAl.ToList()==null||calisanlariAl.Count()==0)
+                    {
+                        XtraMessageBox.Show("Aranan Çalışan Bulunamadı !", "Hata ! | Hikmet Market Uyarıyor ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else { gridControl1.DataSource = calisanlariAl.ToList(); }
+                
+            }
         }
     }
 }

@@ -148,6 +148,7 @@ namespace MarketOtomasyonu
         public void stokGuncelle(int id,int adet)
         {
             var urun = db.urunler.Find(id);
+            if (urun.stok==0) { }
             urun.stok = adet + urun.stok;
             db.SaveChanges();
         }

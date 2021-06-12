@@ -1,7 +1,7 @@
 ﻿
 namespace MarketOtomasyonu
 {
-    partial class MarketYonetimFormu
+    partial class CalisanYonetimFormu
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace MarketOtomasyonu
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MarketYonetimFormu));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CalisanYonetimFormu));
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
@@ -56,6 +56,12 @@ namespace MarketOtomasyonu
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
+            this.btnAra = new DevExpress.XtraEditors.SimpleButton();
+            this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
+            this.txtAranacakMetin = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
+            this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
@@ -73,10 +79,16 @@ namespace MarketOtomasyonu
             ((System.ComponentModel.ISupportInitialize)(this.cbRol.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtParola.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtKullaniciAdi.Properties)).BeginInit();
+            this.xtraTabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
+            this.groupControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAranacakMetin.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControl1
             // 
+            this.gridControl1.AllowRestoreSelectionAndFocusedRow = DevExpress.Utils.DefaultBoolean.False;
             this.gridControl1.DataSource = typeof(MarketOtomasyonu.calisanlar);
             this.gridControl1.EmbeddedNavigator.Appearance.BackColor = System.Drawing.Color.White;
             this.gridControl1.EmbeddedNavigator.Appearance.Options.UseBackColor = true;
@@ -114,7 +126,8 @@ namespace MarketOtomasyonu
             this.xtraTabControl1.TabIndex = 3;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
-            this.xtraTabPage2});
+            this.xtraTabPage2,
+            this.xtraTabPage3});
             // 
             // xtraTabPage1
             // 
@@ -387,7 +400,82 @@ namespace MarketOtomasyonu
             this.labelControl2.TabIndex = 0;
             this.labelControl2.Text = "Kullanıcı Adı :";
             // 
-            // MarketYonetimFormu
+            // xtraTabPage3
+            // 
+            this.xtraTabPage3.Controls.Add(this.btnAra);
+            this.xtraTabPage3.Controls.Add(this.groupControl3);
+            this.xtraTabPage3.Controls.Add(this.groupControl4);
+            this.xtraTabPage3.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("xtraTabPage3.ImageOptions.SvgImage")));
+            this.xtraTabPage3.Name = "xtraTabPage3";
+            this.xtraTabPage3.Size = new System.Drawing.Size(322, 381);
+            this.xtraTabPage3.Text = "Arama";
+            // 
+            // btnAra
+            // 
+            this.btnAra.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnAra.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.btnAra.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnAra.Appearance.Options.UseBackColor = true;
+            this.btnAra.Appearance.Options.UseFont = true;
+            this.btnAra.Appearance.Options.UseForeColor = true;
+            this.btnAra.Appearance.Options.UseTextOptions = true;
+            this.btnAra.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btnAra.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.btnAra.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnAra.ImageOptions.SvgImage")));
+            this.btnAra.Location = new System.Drawing.Point(136, 225);
+            this.btnAra.Name = "btnAra";
+            this.btnAra.Size = new System.Drawing.Size(163, 57);
+            this.btnAra.TabIndex = 13;
+            this.btnAra.Text = "Ara";
+            this.btnAra.Click += new System.EventHandler(this.btnAra_Click);
+            // 
+            // groupControl3
+            // 
+            this.groupControl3.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.groupControl3.Appearance.Options.UseBorderColor = true;
+            this.groupControl3.CaptionImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("groupControl3.CaptionImageOptions.SvgImage")));
+            this.groupControl3.Controls.Add(this.txtAranacakMetin);
+            this.groupControl3.Controls.Add(this.labelControl8);
+            this.groupControl3.Location = new System.Drawing.Point(22, 90);
+            this.groupControl3.Name = "groupControl3";
+            this.groupControl3.Size = new System.Drawing.Size(277, 110);
+            this.groupControl3.TabIndex = 11;
+            this.groupControl3.Text = "Filtre";
+            // 
+            // txtAranacakMetin
+            // 
+            this.txtAranacakMetin.Location = new System.Drawing.Point(128, 55);
+            this.txtAranacakMetin.Name = "txtAranacakMetin";
+            this.txtAranacakMetin.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtAranacakMetin.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.txtAranacakMetin.Properties.Appearance.ForeColor = System.Drawing.Color.White;
+            this.txtAranacakMetin.Properties.Appearance.Options.UseBackColor = true;
+            this.txtAranacakMetin.Properties.Appearance.Options.UseFont = true;
+            this.txtAranacakMetin.Properties.Appearance.Options.UseForeColor = true;
+            this.txtAranacakMetin.Properties.MaxLength = 11;
+            this.txtAranacakMetin.Size = new System.Drawing.Size(129, 26);
+            this.txtAranacakMetin.TabIndex = 13;
+            // 
+            // labelControl8
+            // 
+            this.labelControl8.Appearance.Font = new System.Drawing.Font("Tahoma", 13F);
+            this.labelControl8.Appearance.Options.UseFont = true;
+            this.labelControl8.Location = new System.Drawing.Point(17, 57);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Size = new System.Drawing.Size(105, 21);
+            this.labelControl8.TabIndex = 12;
+            this.labelControl8.Text = "Aranacak TC :";
+            // 
+            // groupControl4
+            // 
+            this.groupControl4.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.groupControl4.Appearance.Options.UseBorderColor = true;
+            this.groupControl4.Location = new System.Drawing.Point(22, 79);
+            this.groupControl4.Name = "groupControl4";
+            this.groupControl4.Size = new System.Drawing.Size(277, 111);
+            this.groupControl4.TabIndex = 12;
+            // 
+            // CalisanYonetimFormu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -395,7 +483,7 @@ namespace MarketOtomasyonu
             this.ClientSize = new System.Drawing.Size(974, 447);
             this.Controls.Add(this.xtraTabControl1);
             this.Controls.Add(this.gridControl1);
-            this.Name = "MarketYonetimFormu";
+            this.Name = "CalisanYonetimFormu";
             this.Text = "MarketYonetimFormu";
             this.Load += new System.EventHandler(this.MarketYonetimFormu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
@@ -418,6 +506,12 @@ namespace MarketOtomasyonu
             ((System.ComponentModel.ISupportInitialize)(this.cbRol.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtParola.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtKullaniciAdi.Properties)).EndInit();
+            this.xtraTabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
+            this.groupControl3.ResumeLayout(false);
+            this.groupControl3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAranacakMetin.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -450,5 +544,11 @@ namespace MarketOtomasyonu
         private DevExpress.XtraEditors.LookUpEdit cbRol;
         private DevExpress.XtraEditors.SimpleButton btnCalisanlarinHepsiniGoster;
         private DevExpress.XtraEditors.GroupControl groupControl2;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage3;
+        private DevExpress.XtraEditors.GroupControl groupControl3;
+        private DevExpress.XtraEditors.LabelControl labelControl8;
+        private DevExpress.XtraEditors.GroupControl groupControl4;
+        private DevExpress.XtraEditors.TextEdit txtAranacakMetin;
+        private DevExpress.XtraEditors.SimpleButton btnAra;
     }
 }
