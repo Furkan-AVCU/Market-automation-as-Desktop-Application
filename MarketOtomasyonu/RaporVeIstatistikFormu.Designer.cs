@@ -98,7 +98,7 @@ namespace MarketOtomasyonu
             this.xtraTabPage1.Controls.Add(this.btnTarihiGecmisÜrünler);
             this.xtraTabPage1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("xtraTabPage1.ImageOptions.SvgImage")));
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(322, 383);
+            this.xtraTabPage1.Size = new System.Drawing.Size(322, 381);
             this.xtraTabPage1.Text = "Göster";
             // 
             // btnSon24SaatSatis
@@ -179,7 +179,7 @@ namespace MarketOtomasyonu
             this.xtraTabPage2.Controls.Add(this.btnTarihiGecmisRaporla);
             this.xtraTabPage2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("xtraTabPage2.ImageOptions.SvgImage")));
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(322, 383);
+            this.xtraTabPage2.Size = new System.Drawing.Size(322, 381);
             this.xtraTabPage2.Text = "Raporla";
             // 
             // btnGunlukSatisRaporla

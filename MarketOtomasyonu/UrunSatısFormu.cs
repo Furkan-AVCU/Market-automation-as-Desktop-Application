@@ -74,7 +74,6 @@ namespace MarketOtomasyonu
 
                 string bugün = yıl + "-" + ay + "-" + gün;
                 DateTime bugun = Convert.ToDateTime(bugün);
-                GirisForm gf =new GirisForm();
                 for (int i = 0; i < kacUrun; i++)
                 {
                     int satanID = GirisForm.calisanID;

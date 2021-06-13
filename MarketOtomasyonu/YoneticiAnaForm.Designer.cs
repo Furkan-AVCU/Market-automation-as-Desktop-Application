@@ -45,6 +45,7 @@ namespace MarketOtomasyonu
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -182,6 +183,10 @@ namespace MarketOtomasyonu
             this.simpleButton2.Size = new System.Drawing.Size(949, 26);
             this.simpleButton2.TabIndex = 4;
             // 
+            // defaultLookAndFeel1
+            // 
+            this.defaultLookAndFeel1.LookAndFeel.SkinName = "Office 2019 White";
+            // 
             // YoneticiAnaForm
             // 
             this.Appearance.BackColor = System.Drawing.SystemColors.HotTrack;
@@ -221,5 +226,6 @@ namespace MarketOtomasyonu
         private DevExpress.XtraBars.BarButtonItem btnSatisEkrani;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
     }
 }
