@@ -32,115 +32,135 @@ namespace MarketOtomasyonu
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GirisForm));
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.tebKullaniciadi = new DevExpress.XtraEditors.TextEdit();
-            this.tebParola = new DevExpress.XtraEditors.TextEdit();
-            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.btnGiris = new DevExpress.XtraEditors.SimpleButton();
-            ((System.ComponentModel.ISupportInitialize)(this.tebKullaniciadi.Properties)).BeginInit();
+            this.tebParola = new DevExpress.XtraEditors.TextEdit();
+            this.tebKullaniciadi = new DevExpress.XtraEditors.TextEdit();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tebParola.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
-            this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tebKullaniciadi.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
             // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.labelControl1.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.Appearance.Options.UseForeColor = true;
-            this.labelControl1.Location = new System.Drawing.Point(109, 116);
+            this.labelControl1.Location = new System.Drawing.Point(66, 232);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(83, 17);
+            this.labelControl1.Size = new System.Drawing.Size(120, 22);
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Kullanıcı Adı :";
             // 
             // labelControl2
             // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.labelControl2.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.labelControl2.Appearance.Options.UseFont = true;
             this.labelControl2.Appearance.Options.UseForeColor = true;
-            this.labelControl2.Location = new System.Drawing.Point(109, 154);
+            this.labelControl2.Location = new System.Drawing.Point(66, 293);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(45, 17);
+            this.labelControl2.Size = new System.Drawing.Size(63, 22);
             this.labelControl2.TabIndex = 1;
             this.labelControl2.Text = "Parola :";
             // 
-            // tebKullaniciadi
+            // btnGiris
             // 
-            this.tebKullaniciadi.Location = new System.Drawing.Point(198, 113);
-            this.tebKullaniciadi.Name = "tebKullaniciadi";
-            this.tebKullaniciadi.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.tebKullaniciadi.Properties.Appearance.Options.UseFont = true;
-            this.tebKullaniciadi.Size = new System.Drawing.Size(100, 24);
-            this.tebKullaniciadi.TabIndex = 2;
+            this.btnGiris.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnGiris.Appearance.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnGiris.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnGiris.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.btnGiris.Appearance.Options.UseBackColor = true;
+            this.btnGiris.Appearance.Options.UseFont = true;
+            this.btnGiris.Appearance.Options.UseForeColor = true;
+            this.btnGiris.AppearanceDisabled.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnGiris.AppearanceDisabled.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnGiris.AppearanceDisabled.Options.UseBackColor = true;
+            this.btnGiris.Location = new System.Drawing.Point(277, 438);
+            this.btnGiris.Name = "btnGiris";
+            this.btnGiris.Size = new System.Drawing.Size(146, 58);
+            this.btnGiris.TabIndex = 5;
+            this.btnGiris.Text = "GİRİŞ YAP";
+            this.btnGiris.Click += new System.EventHandler(this.btnGiris_Click);
             // 
             // tebParola
             // 
-            this.tebParola.Location = new System.Drawing.Point(198, 151);
+            this.tebParola.Location = new System.Drawing.Point(135, 294);
             this.tebParola.Name = "tebParola";
+            this.tebParola.Properties.Appearance.BackColor = System.Drawing.Color.Black;
             this.tebParola.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.tebParola.Properties.Appearance.ForeColor = System.Drawing.Color.White;
+            this.tebParola.Properties.Appearance.Options.UseBackColor = true;
             this.tebParola.Properties.Appearance.Options.UseFont = true;
-            this.tebParola.Size = new System.Drawing.Size(100, 24);
+            this.tebParola.Properties.Appearance.Options.UseForeColor = true;
+            this.tebParola.Size = new System.Drawing.Size(181, 24);
             this.tebParola.TabIndex = 3;
             // 
-            // panelControl1
+            // tebKullaniciadi
             // 
-            this.panelControl1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.panelControl1.Appearance.Options.UseBackColor = true;
-            this.panelControl1.Controls.Add(this.labelControl3);
-            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(0, 0);
-            this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(447, 55);
-            this.panelControl1.TabIndex = 4;
+            this.tebKullaniciadi.Location = new System.Drawing.Point(192, 230);
+            this.tebKullaniciadi.Name = "tebKullaniciadi";
+            this.tebKullaniciadi.Properties.Appearance.BackColor = System.Drawing.Color.Black;
+            this.tebKullaniciadi.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.tebKullaniciadi.Properties.Appearance.ForeColor = System.Drawing.Color.White;
+            this.tebKullaniciadi.Properties.Appearance.Options.UseBackColor = true;
+            this.tebKullaniciadi.Properties.Appearance.Options.UseFont = true;
+            this.tebKullaniciadi.Properties.Appearance.Options.UseForeColor = true;
+            this.tebKullaniciadi.Size = new System.Drawing.Size(124, 24);
+            this.tebKullaniciadi.TabIndex = 2;
             // 
-            // labelControl3
+            // simpleButton1
             // 
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tempus Sans ITC", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(92, 12);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(271, 24);
-            this.labelControl3.TabIndex = 0;
-            this.labelControl3.Text = "En iyi market Hikmet Market ";
-            // 
-            // btnGiris
-            // 
-            this.btnGiris.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnGiris.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnGiris.Appearance.Options.UseFont = true;
-            this.btnGiris.Appearance.Options.UseForeColor = true;
-            this.btnGiris.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnGiris.ImageOptions.SvgImage")));
-            this.btnGiris.Location = new System.Drawing.Point(198, 200);
-            this.btnGiris.Name = "btnGiris";
-            this.btnGiris.Size = new System.Drawing.Size(100, 29);
-            this.btnGiris.TabIndex = 5;
-            this.btnGiris.Text = "Giriş";
-            this.btnGiris.Click += new System.EventHandler(this.btnGiris_Click);
+            this.simpleButton1.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.simpleButton1.Appearance.BackColor2 = System.Drawing.Color.Transparent;
+            this.simpleButton1.Appearance.BorderColor = System.Drawing.Color.Transparent;
+            this.simpleButton1.Appearance.Options.UseBackColor = true;
+            this.simpleButton1.Appearance.Options.UseBorderColor = true;
+            this.simpleButton1.Appearance.Options.UseForeColor = true;
+            this.simpleButton1.AppearanceDisabled.BackColor = System.Drawing.Color.Transparent;
+            this.simpleButton1.AppearanceDisabled.BorderColor = System.Drawing.Color.Transparent;
+            this.simpleButton1.AppearanceDisabled.Options.UseBackColor = true;
+            this.simpleButton1.AppearanceDisabled.Options.UseBorderColor = true;
+            this.simpleButton1.AppearanceHovered.BackColor = System.Drawing.Color.Transparent;
+            this.simpleButton1.AppearanceHovered.BackColor2 = System.Drawing.Color.Transparent;
+            this.simpleButton1.AppearanceHovered.ForeColor = System.Drawing.Color.Transparent;
+            this.simpleButton1.AppearanceHovered.Options.UseBackColor = true;
+            this.simpleButton1.AppearanceHovered.Options.UseForeColor = true;
+            this.simpleButton1.AppearancePressed.BackColor = System.Drawing.Color.Transparent;
+            this.simpleButton1.AppearancePressed.BackColor2 = System.Drawing.Color.Transparent;
+            this.simpleButton1.AppearancePressed.Options.UseBackColor = true;
+            this.simpleButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.simpleButton1.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.simpleButton1.Location = new System.Drawing.Point(402, 12);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
+            this.simpleButton1.Size = new System.Drawing.Size(36, 29);
+            this.simpleButton1.TabIndex = 6;
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // GirisForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(447, 313);
+            this.BackgroundImage = global::MarketOtomasyonu.Properties.Resources.hikmet_market__1_;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(450, 521);
+            this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.btnGiris);
-            this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.tebParola);
             this.Controls.Add(this.tebKullaniciadi);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "GirisForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hikmet Market Giriş";
-            ((System.ComponentModel.ISupportInitialize)(this.tebKullaniciadi.Properties)).EndInit();
+            this.Load += new System.EventHandler(this.GirisForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tebParola.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
-            this.panelControl1.ResumeLayout(false);
-            this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tebKullaniciadi.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -152,9 +172,8 @@ namespace MarketOtomasyonu
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.TextEdit tebKullaniciadi;
         private DevExpress.XtraEditors.TextEdit tebParola;
-        private DevExpress.XtraEditors.PanelControl panelControl1;
-        private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.SimpleButton btnGiris;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }
 

@@ -207,6 +207,7 @@ namespace MarketOtomasyonu
             this.txtSatisFiyat.Name = "txtSatisFiyat";
             this.txtSatisFiyat.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.txtSatisFiyat.Properties.Appearance.Options.UseFont = true;
+            this.txtSatisFiyat.Properties.MaxLength = 7;
             this.txtSatisFiyat.Size = new System.Drawing.Size(179, 26);
             this.txtSatisFiyat.TabIndex = 7;
             this.txtSatisFiyat.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSatisFiyat_KeyPress);
@@ -438,8 +439,9 @@ namespace MarketOtomasyonu
             this.ClientSize = new System.Drawing.Size(974, 447);
             this.Controls.Add(this.xtraTabControl1);
             this.Controls.Add(this.gridControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SatisYonetimFormu";
-            this.Text = "SatisYonetimFormu";
+            this.Text = "Satış Yönetimi";
             this.Load += new System.EventHandler(this.SatisYonetimFormu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
             this.xtraTabControl1.ResumeLayout(false);

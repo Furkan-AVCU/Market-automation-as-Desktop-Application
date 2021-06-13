@@ -1,7 +1,7 @@
 ﻿
 namespace MarketOtomasyonu
 {
-    partial class IadeYonetimFormu
+    partial class CalisanIadeFormu
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace MarketOtomasyonu
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IadeYonetimFormu));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CalisanIadeFormu));
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.groupControl5 = new DevExpress.XtraEditors.GroupControl();
@@ -51,13 +51,8 @@ namespace MarketOtomasyonu
             this.cbUrun = new DevExpress.XtraEditors.LookUpEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
-            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.cbCalisan = new DevExpress.XtraEditors.LookUpEdit();
-            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.btnSil = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
@@ -77,10 +72,6 @@ namespace MarketOtomasyonu
             this.groupControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbUrun.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
-            this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbCalisan.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
@@ -98,11 +89,11 @@ namespace MarketOtomasyonu
             this.xtraTabControl1.AppearancePage.HeaderDisabled.Options.UseBackColor = true;
             this.xtraTabControl1.AppearancePage.HeaderHotTracked.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.xtraTabControl1.AppearancePage.HeaderHotTracked.Options.UseBackColor = true;
-            this.xtraTabControl1.Location = new System.Drawing.Point(640, 11);
+            this.xtraTabControl1.Location = new System.Drawing.Point(640, 10);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
             this.xtraTabControl1.Size = new System.Drawing.Size(324, 425);
-            this.xtraTabControl1.TabIndex = 8;
+            this.xtraTabControl1.TabIndex = 10;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
             this.xtraTabPage2});
@@ -117,7 +108,6 @@ namespace MarketOtomasyonu
             this.xtraTabPage1.Controls.Add(this.btnEkle);
             this.xtraTabPage1.Controls.Add(this.btnHepsiniGoruntule);
             this.xtraTabPage1.Controls.Add(this.btnGuncelle);
-            this.xtraTabPage1.Controls.Add(this.btnSil);
             this.xtraTabPage1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("xtraTabPage1.ImageOptions.SvgImage")));
             this.xtraTabPage1.Name = "xtraTabPage1";
             this.xtraTabPage1.Size = new System.Drawing.Size(322, 381);
@@ -195,7 +185,7 @@ namespace MarketOtomasyonu
             this.btnEkle.AppearancePressed.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnEkle.AppearancePressed.Options.UseBackColor = true;
             this.btnEkle.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnEkle.ImageOptions.SvgImage")));
-            this.btnEkle.Location = new System.Drawing.Point(13, 260);
+            this.btnEkle.Location = new System.Drawing.Point(12, 322);
             this.btnEkle.Name = "btnEkle";
             this.btnEkle.Size = new System.Drawing.Size(140, 47);
             this.btnEkle.TabIndex = 15;
@@ -214,9 +204,9 @@ namespace MarketOtomasyonu
             this.btnHepsiniGoruntule.AppearancePressed.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnHepsiniGoruntule.AppearancePressed.Options.UseBackColor = true;
             this.btnHepsiniGoruntule.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnHepsiniGoruntule.ImageOptions.SvgImage")));
-            this.btnHepsiniGoruntule.Location = new System.Drawing.Point(168, 260);
+            this.btnHepsiniGoruntule.Location = new System.Drawing.Point(12, 260);
             this.btnHepsiniGoruntule.Name = "btnHepsiniGoruntule";
-            this.btnHepsiniGoruntule.Size = new System.Drawing.Size(140, 47);
+            this.btnHepsiniGoruntule.Size = new System.Drawing.Size(296, 47);
             this.btnHepsiniGoruntule.TabIndex = 14;
             this.btnHepsiniGoruntule.Text = "İADELERİ GÖSTER";
             this.btnHepsiniGoruntule.Click += new System.EventHandler(this.btnHepsiniGoruntule_Click);
@@ -244,8 +234,6 @@ namespace MarketOtomasyonu
             this.xtraTabPage2.Controls.Add(this.groupControl8);
             this.xtraTabPage2.Controls.Add(this.groupControl3);
             this.xtraTabPage2.Controls.Add(this.groupControl4);
-            this.xtraTabPage2.Controls.Add(this.groupControl1);
-            this.xtraTabPage2.Controls.Add(this.groupControl2);
             this.xtraTabPage2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("xtraTabPage2.ImageOptions.SvgImage")));
             this.xtraTabPage2.Name = "xtraTabPage2";
             this.xtraTabPage2.Size = new System.Drawing.Size(322, 381);
@@ -337,7 +325,7 @@ namespace MarketOtomasyonu
             this.groupControl3.CaptionImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("groupControl3.CaptionImageOptions.SvgImage")));
             this.groupControl3.Controls.Add(this.cbUrun);
             this.groupControl3.Controls.Add(this.labelControl3);
-            this.groupControl3.Location = new System.Drawing.Point(42, 133);
+            this.groupControl3.Location = new System.Drawing.Point(42, 77);
             this.groupControl3.Name = "groupControl3";
             this.groupControl3.Size = new System.Drawing.Size(238, 83);
             this.groupControl3.TabIndex = 27;
@@ -371,66 +359,10 @@ namespace MarketOtomasyonu
             this.groupControl4.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.groupControl4.Appearance.Options.UseBackColor = true;
             this.groupControl4.Appearance.Options.UseBorderColor = true;
-            this.groupControl4.Location = new System.Drawing.Point(42, 120);
+            this.groupControl4.Location = new System.Drawing.Point(42, 64);
             this.groupControl4.Name = "groupControl4";
             this.groupControl4.Size = new System.Drawing.Size(238, 81);
             this.groupControl4.TabIndex = 28;
-            // 
-            // groupControl1
-            // 
-            this.groupControl1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.groupControl1.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.groupControl1.Appearance.Options.UseBackColor = true;
-            this.groupControl1.Appearance.Options.UseBorderColor = true;
-            this.groupControl1.Appearance.Options.UseFont = true;
-            this.groupControl1.Appearance.Options.UseForeColor = true;
-            this.groupControl1.Appearance.Options.UseTextOptions = true;
-            this.groupControl1.AppearanceCaption.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.groupControl1.AppearanceCaption.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.groupControl1.AppearanceCaption.Options.UseBackColor = true;
-            this.groupControl1.AppearanceCaption.Options.UseForeColor = true;
-            this.groupControl1.AppearanceCaption.Options.UseTextOptions = true;
-            this.groupControl1.CaptionImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("groupControl1.CaptionImageOptions.SvgImage")));
-            this.groupControl1.Controls.Add(this.cbCalisan);
-            this.groupControl1.Controls.Add(this.labelControl5);
-            this.groupControl1.Location = new System.Drawing.Point(42, 27);
-            this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(238, 82);
-            this.groupControl1.TabIndex = 25;
-            this.groupControl1.Text = "İade Alan Çalışan";
-            // 
-            // cbCalisan
-            // 
-            this.cbCalisan.Location = new System.Drawing.Point(76, 46);
-            this.cbCalisan.Name = "cbCalisan";
-            this.cbCalisan.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.cbCalisan.Properties.Appearance.Options.UseFont = true;
-            this.cbCalisan.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbCalisan.Properties.NullText = "";
-            this.cbCalisan.Size = new System.Drawing.Size(144, 26);
-            this.cbCalisan.TabIndex = 14;
-            // 
-            // labelControl5
-            // 
-            this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Location = new System.Drawing.Point(9, 49);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(61, 19);
-            this.labelControl5.TabIndex = 13;
-            this.labelControl5.Text = "Çalışan :";
-            // 
-            // groupControl2
-            // 
-            this.groupControl2.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.groupControl2.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.groupControl2.Appearance.Options.UseBackColor = true;
-            this.groupControl2.Appearance.Options.UseBorderColor = true;
-            this.groupControl2.Location = new System.Drawing.Point(42, 14);
-            this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(238, 95);
-            this.groupControl2.TabIndex = 26;
             // 
             // gridControl1
             // 
@@ -440,11 +372,11 @@ namespace MarketOtomasyonu
             this.gridControl1.EmbeddedNavigator.Appearance.Options.UseTextOptions = true;
             this.gridControl1.EmbeddedNavigator.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridControl1.EmbeddedNavigator.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridControl1.Location = new System.Drawing.Point(11, 12);
+            this.gridControl1.Location = new System.Drawing.Point(11, 11);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.Size = new System.Drawing.Size(623, 425);
-            this.gridControl1.TabIndex = 7;
+            this.gridControl1.TabIndex = 9;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
@@ -482,21 +414,7 @@ namespace MarketOtomasyonu
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
             // 
-            // btnSil
-            // 
-            this.btnSil.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnSil.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.btnSil.Appearance.Options.UseBackColor = true;
-            this.btnSil.Appearance.Options.UseFont = true;
-            this.btnSil.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnSil.ImageOptions.SvgImage")));
-            this.btnSil.Location = new System.Drawing.Point(12, 322);
-            this.btnSil.Name = "btnSil";
-            this.btnSil.Size = new System.Drawing.Size(140, 47);
-            this.btnSil.TabIndex = 9;
-            this.btnSil.Text = "İADE SİL";
-            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
-            // 
-            // IadeYonetimFormu
+            // CalisanIadeFormu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -505,9 +423,9 @@ namespace MarketOtomasyonu
             this.Controls.Add(this.xtraTabControl1);
             this.Controls.Add(this.gridControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "IadeYonetimFormu";
-            this.Text = "İade Yönetim";
-            this.Load += new System.EventHandler(this.IadeYonetimFormu_Load);
+            this.Name = "CalisanIadeFormu";
+            this.Text = "İade Ekranı";
+            this.Load += new System.EventHandler(this.CalisanIadeFormu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
             this.xtraTabControl1.ResumeLayout(false);
             this.xtraTabPage1.ResumeLayout(false);
@@ -529,11 +447,6 @@ namespace MarketOtomasyonu
             this.groupControl3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbUrun.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
-            this.groupControl1.ResumeLayout(false);
-            this.groupControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbCalisan.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
@@ -544,31 +457,26 @@ namespace MarketOtomasyonu
 
         private DevExpress.XtraTab.XtraTabControl xtraTabControl1;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage1;
+        private DevExpress.XtraEditors.GroupControl groupControl5;
+        private DevExpress.XtraEditors.GroupControl groupControl6;
+        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraRichEdit.RichEditControl txtNeden;
+        private DevExpress.XtraEditors.SimpleButton btnEkle;
         private DevExpress.XtraEditors.SimpleButton btnHepsiniGoruntule;
         private DevExpress.XtraEditors.SimpleButton btnGuncelle;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage2;
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraEditors.DateEdit deIadeTarihi;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.GroupControl groupControl8;
+        private DevExpress.XtraEditors.GroupControl groupControl7;
         private DevExpress.XtraEditors.TextEdit txtAdet;
+        private DevExpress.XtraEditors.DateEdit deIadeTarihi;
         private DevExpress.XtraEditors.LabelControl labelControl4;
-        private DevExpress.XtraRichEdit.RichEditControl txtNeden;
-        private DevExpress.XtraEditors.GroupControl groupControl1;
-        private DevExpress.XtraEditors.LookUpEdit cbCalisan;
-        private DevExpress.XtraEditors.LabelControl labelControl5;
-        private DevExpress.XtraEditors.GroupControl groupControl2;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.GroupControl groupControl3;
         private DevExpress.XtraEditors.LookUpEdit cbUrun;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.GroupControl groupControl4;
-        private DevExpress.XtraEditors.GroupControl groupControl6;
-        private DevExpress.XtraEditors.GroupControl groupControl8;
-        private DevExpress.XtraEditors.GroupControl groupControl7;
-        private DevExpress.XtraEditors.SimpleButton btnEkle;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraEditors.GroupControl groupControl5;
-        private DevExpress.XtraEditors.SimpleButton btnSil;
+        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
     }
 }

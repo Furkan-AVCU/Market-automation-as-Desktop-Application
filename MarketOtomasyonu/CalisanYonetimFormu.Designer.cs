@@ -483,8 +483,9 @@ namespace MarketOtomasyonu
             this.ClientSize = new System.Drawing.Size(974, 447);
             this.Controls.Add(this.xtraTabControl1);
             this.Controls.Add(this.gridControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CalisanYonetimFormu";
-            this.Text = "MarketYonetimFormu";
+            this.Text = "Çalışan Yönetimi";
             this.Load += new System.EventHandler(this.MarketYonetimFormu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
