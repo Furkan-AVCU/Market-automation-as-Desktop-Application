@@ -118,40 +118,46 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="hikmet-market" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\hikmet-market.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="orange" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\orange.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="markettttt1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\markettttt1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="hikmet" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\hikmet.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="marketimyeni" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marketimyeni.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="hikmet-market (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\hikmet-market (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="girisyap" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\girisyap.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="https---discor1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\https---discor1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="marketim1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\marketim1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="kapatbuton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\kapatbuton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="markettt" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\markettt.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="marketim1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marketim1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="marketim" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\marketim.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="marketimyeni" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\marketimyeni.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="girisyap" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\girisyap.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hikmet" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hikmet.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\white.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="kapatbuton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\kapatbuton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="hikmet-market" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hikmet-market.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="arkaplan" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\arkaplan.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

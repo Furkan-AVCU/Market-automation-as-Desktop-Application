@@ -95,23 +95,26 @@ namespace MarketOtomasyonu
 
         private void btnSil_Click(object sender, EventArgs e)
         {
-            var silinecekId = int.Parse(gridView1.GetFocusedRowCellValue("SatışID").ToString());
-            var eskiAdet = int.Parse(gridView1.GetFocusedRowCellValue("Adet").ToString());
-            if (silinecekId.ToString() == string.Empty)
+            if (XtraMessageBox.Show("Dikkat ! Bu Satışı silerseniz bu Satış ile ilgili bütün işlemleri silmiş olursunuz ! Satışı silmek istediğinizden emin misiniz ?", "Emin misin ? | Hikmet Market Uyarıyor ! ", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) != DialogResult.No)
             {
-                XtraMessageBox.Show("Silme işleminde hata !", "Hata | Hikmet Market ! ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                var silinecekId = int.Parse(gridView1.GetFocusedRowCellValue("SatışID").ToString());
+                var eskiAdet = int.Parse(gridView1.GetFocusedRowCellValue("Adet").ToString());
+                if (silinecekId.ToString() == string.Empty)
+                {
+                    XtraMessageBox.Show("Silme işleminde hata !", "Hata | Hikmet Market ! ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    var silinecekSatiş = (from x in db.satislar
+                                          where x.satis_id == silinecekId
+                                          select x).FirstOrDefault();
+                    db.satislar.Remove(silinecekSatiş);
+                    db.SaveChanges();
+                    stokGuncelle(silinecekId, eskiAdet);
+                    XtraMessageBox.Show("Satış Silindi !", "Başarılı | Hikmet Market ! ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                SatisListele();
             }
-            else
-            {
-                var silinecekSatiş = (from x in db.satislar
-                                     where x.satis_id == silinecekId
-                                     select x).FirstOrDefault();
-                db.satislar.Remove(silinecekSatiş);
-                db.SaveChanges();
-                stokGuncelle(silinecekId, eskiAdet);
-                XtraMessageBox.Show("Satış Silindi !", "Başarılı | Hikmet Market ! ", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            SatisListele();
         }
 
         private void btnGuncelle_Click(object sender, EventArgs e)

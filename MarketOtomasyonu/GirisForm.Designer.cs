@@ -93,6 +93,7 @@ namespace MarketOtomasyonu
             this.tebParola.Properties.Appearance.Options.UseBackColor = true;
             this.tebParola.Properties.Appearance.Options.UseFont = true;
             this.tebParola.Properties.Appearance.Options.UseForeColor = true;
+            this.tebParola.Properties.UseSystemPasswordChar = true;
             this.tebParola.Size = new System.Drawing.Size(181, 24);
             this.tebParola.TabIndex = 3;
             // 

@@ -139,7 +139,7 @@ namespace MarketOtomasyonu
 
         private void btnSil_Click(object sender, EventArgs e)
         {
-            if (XtraMessageBox.Show("Çalışanı silmek istediğinden emin misin ?", "Emin misin ? | Hikmet Market ", MessageBoxButtons.YesNo,MessageBoxIcon.Warning) != DialogResult.No) {
+            if (XtraMessageBox.Show("Dikkat ! Çalışanı silerseniz bu çalışanın yaptığı bütün işlemleri silmiş olursunuz ! Çalışanı silmek istediğinizden emin misiniz ?", "Emin misin ? | Hikmet Market Uyarıyor ! ", MessageBoxButtons.YesNo,MessageBoxIcon.Warning) != DialogResult.No) {
                 var silinecekId = int.Parse(gridView1.GetFocusedRowCellValue("ÇalışanID").ToString());
                 if (silinecekId.ToString() == string.Empty)
                 {

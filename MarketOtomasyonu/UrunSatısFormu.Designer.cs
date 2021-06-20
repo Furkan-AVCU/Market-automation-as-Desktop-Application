@@ -325,9 +325,9 @@ namespace MarketOtomasyonu
             this.groupControl3.Controls.Add(this.lblToplamTutar);
             this.groupControl3.Controls.Add(this.labelControl3);
             this.groupControl3.Controls.Add(this.btnSatisYap);
-            this.groupControl3.Location = new System.Drawing.Point(779, 281);
+            this.groupControl3.Location = new System.Drawing.Point(780, 281);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(183, 159);
+            this.groupControl3.Size = new System.Drawing.Size(182, 159);
             this.groupControl3.TabIndex = 7;
             // 
             // lblToplamTutar
@@ -358,7 +358,7 @@ namespace MarketOtomasyonu
             this.btnSatisYap.Appearance.Options.UseFont = true;
             this.btnSatisYap.Appearance.Options.UseForeColor = true;
             this.btnSatisYap.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnSatisYap.ImageOptions.SvgImage")));
-            this.btnSatisYap.Location = new System.Drawing.Point(37, 97);
+            this.btnSatisYap.Location = new System.Drawing.Point(37, 98);
             this.btnSatisYap.Name = "btnSatisYap";
             this.btnSatisYap.Size = new System.Drawing.Size(130, 47);
             this.btnSatisYap.TabIndex = 1;

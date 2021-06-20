@@ -63,6 +63,16 @@ namespace MarketOtomasyonu.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
+        internal static System.Drawing.Bitmap arkaplan {
+            get {
+                object obj = ResourceManager.GetObject("arkaplan", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
         internal static System.Drawing.Bitmap girisyap {
             get {
                 object obj = ResourceManager.GetObject("girisyap", resourceCulture);
@@ -96,6 +106,16 @@ namespace MarketOtomasyonu.Properties {
         internal static System.Drawing.Bitmap hikmet_market__1_ {
             get {
                 object obj = ResourceManager.GetObject("hikmet-market (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap https___discor1 {
+            get {
+                object obj = ResourceManager.GetObject("https---discor1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

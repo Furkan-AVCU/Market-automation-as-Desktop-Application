@@ -110,7 +110,7 @@ namespace MarketOtomasyonu
             this.xtraTabPage1.Controls.Add(this.btnGuncelle);
             this.xtraTabPage1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("xtraTabPage1.ImageOptions.SvgImage")));
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(322, 381);
+            this.xtraTabPage1.Size = new System.Drawing.Size(322, 383);
             this.xtraTabPage1.Text = "İade Nedeni";
             // 
             // groupControl5
@@ -236,7 +236,7 @@ namespace MarketOtomasyonu
             this.xtraTabPage2.Controls.Add(this.groupControl4);
             this.xtraTabPage2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("xtraTabPage2.ImageOptions.SvgImage")));
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(322, 381);
+            this.xtraTabPage2.Size = new System.Drawing.Size(322, 383);
             this.xtraTabPage2.Text = "İade Detayları";
             // 
             // groupControl8
@@ -419,6 +419,7 @@ namespace MarketOtomasyonu
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(974, 447);
             this.Controls.Add(this.xtraTabControl1);
             this.Controls.Add(this.gridControl1);

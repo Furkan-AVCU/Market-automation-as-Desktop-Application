@@ -330,6 +330,8 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\arkaplan.jpg" />
+    <None Include="Resources\https---discor1.jpg" />
     <None Include="Resources\kapatbuton.png" />
     <None Include="Resources\orange.jpg" />
     <None Include="Resources\girisyap.png" />

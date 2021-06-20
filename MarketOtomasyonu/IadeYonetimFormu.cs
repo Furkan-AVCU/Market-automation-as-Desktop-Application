@@ -96,23 +96,26 @@ namespace MarketOtomasyonu
 
         private void btnSil_Click(object sender, EventArgs e)
         {
-            var silinecekId = int.Parse(gridView1.GetFocusedRowCellValue("IadeID").ToString());
-            var eskiAdet = int.Parse(gridView1.GetFocusedRowCellValue("Adet").ToString());
-            if (silinecekId.ToString() == string.Empty)
+            if (XtraMessageBox.Show("Dikkat ! Bu İadeyi silerseniz bu iade ile ilgili bütün kayıtları silmiş olursunuz ! İadeyi silmek istediğinizden emin misiniz ?", "Emin misin ? | Hikmet Market Uyarıyor ! ", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) != DialogResult.No)
             {
-                XtraMessageBox.Show("Silme işleminde hata !", "Hata | Hikmet Market ! ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                var silinecekId = int.Parse(gridView1.GetFocusedRowCellValue("IadeID").ToString());
+                var eskiAdet = int.Parse(gridView1.GetFocusedRowCellValue("Adet").ToString());
+                if (silinecekId.ToString() == string.Empty)
+                {
+                    XtraMessageBox.Show("Silme işleminde hata !", "Hata | Hikmet Market ! ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    var silinecekIade = (from x in db.iadeler
+                                         where x.iade_id == silinecekId
+                                         select x).FirstOrDefault();
+                    db.iadeler.Remove(silinecekIade);
+                    stokGuncelle(silinecekId, int.Parse(txtAdet.Text));
+                    db.SaveChanges();
+                    XtraMessageBox.Show("Iade Silindi !", "Başarılı | Hikmet Market ! ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                IadeListele();
             }
-            else
-            {
-                var silinecekIade = (from x in db.iadeler
-                                      where x.iade_id == silinecekId
-                                      select x).FirstOrDefault();
-                db.iadeler.Remove(silinecekIade);
-                stokGuncelle(silinecekId, int.Parse(txtAdet.Text));
-                db.SaveChanges();
-                XtraMessageBox.Show("Iade Silindi !", "Başarılı | Hikmet Market ! ", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            IadeListele();
         }
 
         private void btnGuncelle_Click(object sender, EventArgs e)
@@ -173,8 +176,16 @@ namespace MarketOtomasyonu
         public void stokGuncelle(int id, int adet)
         {
             var urun = db.urunler.Find(id);
-            urun.stok = adet + urun.stok;
-            db.SaveChanges();
+            if (urun == null || urun.ToString() == string.Empty)
+            {
+                XtraMessageBox.Show("Ürün stoğu güncellemede sorun yaşandı ! !", "Hata | Hikmet Market Uyarıyor  ! ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            else
+            {
+                urun.stok = adet + urun.stok;
+                db.SaveChanges();
+            }
         }
 
 

@@ -197,14 +197,5 @@ namespace MarketOtomasyonu
             printTool.ShowRibbonPreview(lookAndFeel);
         }
 
-        private void simpleButton1_Click(object sender, EventArgs e)
-        {
-            TARİHGEÇEN TarihiGecmisler = new TARİHGEÇEN();
-            ReportPrintTool printTool = new ReportPrintTool(TarihiGecmisler);
-            UserLookAndFeel lookAndFeel = new UserLookAndFeel(this);
-            lookAndFeel.UseDefaultLookAndFeel = false;
-            lookAndFeel.SkinName = "Office 2016 Colorful";
-            printTool.ShowRibbonPreview(lookAndFeel);
-        }
     }
 }

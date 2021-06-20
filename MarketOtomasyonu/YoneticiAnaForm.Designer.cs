@@ -165,11 +165,12 @@ namespace MarketOtomasyonu
             this.simpleButton1.AppearanceDisabled.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.simpleButton1.AppearanceDisabled.Options.UseBackColor = true;
             this.simpleButton1.BackgroundImage = global::MarketOtomasyonu.Properties.Resources.orange;
+            this.simpleButton1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.simpleButton1.Enabled = false;
             this.simpleButton1.Location = new System.Drawing.Point(153, 1);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.simpleButton1.Size = new System.Drawing.Size(825, 53);
+            this.simpleButton1.Size = new System.Drawing.Size(825, 49);
             this.simpleButton1.TabIndex = 3;
             // 
             // simpleButton2
@@ -177,6 +178,7 @@ namespace MarketOtomasyonu
             this.simpleButton2.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.simpleButton2.Appearance.Options.UseBackColor = true;
             this.simpleButton2.BackgroundImage = global::MarketOtomasyonu.Properties.Resources.orange;
+            this.simpleButton2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.simpleButton2.Enabled = false;
             this.simpleButton2.Location = new System.Drawing.Point(29, 0);
             this.simpleButton2.Name = "simpleButton2";
@@ -189,7 +191,7 @@ namespace MarketOtomasyonu
             // 
             // YoneticiAnaForm
             // 
-            this.Appearance.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;

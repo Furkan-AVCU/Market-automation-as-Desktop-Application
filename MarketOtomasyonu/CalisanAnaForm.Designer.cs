@@ -83,6 +83,7 @@ namespace MarketOtomasyonu
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup1,
             this.ribbonPageGroup2});
+            this.ribbonPage1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ribbonPage1.ImageOptions.Image")));
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "İşlemler";
             // 
@@ -107,10 +108,11 @@ namespace MarketOtomasyonu
             this.simpleButton1.AppearanceDisabled.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.simpleButton1.AppearanceDisabled.Options.UseBackColor = true;
             this.simpleButton1.BackgroundImage = global::MarketOtomasyonu.Properties.Resources.orange;
-            this.simpleButton1.Location = new System.Drawing.Point(115, 0);
+            this.simpleButton1.Enabled = false;
+            this.simpleButton1.Location = new System.Drawing.Point(149, 0);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.simpleButton1.Size = new System.Drawing.Size(863, 50);
+            this.simpleButton1.Size = new System.Drawing.Size(829, 50);
             this.simpleButton1.TabIndex = 2;
             // 
             // simpleButton2
@@ -118,6 +120,7 @@ namespace MarketOtomasyonu
             this.simpleButton2.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.simpleButton2.Appearance.Options.UseBackColor = true;
             this.simpleButton2.BackgroundImage = global::MarketOtomasyonu.Properties.Resources.orange;
+            this.simpleButton2.Enabled = false;
             this.simpleButton2.Location = new System.Drawing.Point(30, 0);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(948, 26);
@@ -129,7 +132,7 @@ namespace MarketOtomasyonu
             // 
             // CalisanAnaForm
             // 
-            this.Appearance.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -137,7 +140,7 @@ namespace MarketOtomasyonu
             this.Controls.Add(this.simpleButton2);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.ribbonControl1);
-            this.IconOptions.Image = global::MarketOtomasyonu.Properties.Resources.hikmet;
+            this.IconOptions.Image = global::MarketOtomasyonu.Properties.Resources.markettttt1;
             this.IsMdiContainer = true;
             this.Name = "CalisanAnaForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -174,21 +174,24 @@ namespace MarketOtomasyonu
 
         private void btnSil_Click(object sender, EventArgs e)
         {
-            var silinecekId = int.Parse(gridView1.GetFocusedRowCellValue("ÜrünID").ToString());
-            if (silinecekId.ToString() == string.Empty)
+            if (XtraMessageBox.Show("Dikkat ! Bu Ürünü silerseniz bu ürün ile ilgili bütün kayıtları silmiş olursunuz ! Ürünü silmek istediğinizden emin misiniz ?", "Emin misin ? | Hikmet Market Uyarıyor ! ", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) != DialogResult.No)
             {
-                XtraMessageBox.Show("Silme işleminde hata !", "Hata | Hikmet Market ! ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                var silinecekId = int.Parse(gridView1.GetFocusedRowCellValue("ÜrünID").ToString());
+                if (silinecekId.ToString() == string.Empty)
+                {
+                    XtraMessageBox.Show("Silme işleminde hata !", "Hata | Hikmet Market ! ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    var silinecekUrun = (from x in db.urunler
+                                         where x.Urun_id == silinecekId
+                                         select x).FirstOrDefault();
+                    db.urunler.Remove(silinecekUrun);
+                    db.SaveChanges();
+                    XtraMessageBox.Show("Ürün Silindi !", "Başarılı | Hikmet Market ! ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                UrunListele();
             }
-            else
-            {
-                var silinecekUrun = (from x in db.urunler
-                                        where x.Urun_id == silinecekId
-                                        select x).FirstOrDefault();
-                db.urunler.Remove(silinecekUrun);
-                db.SaveChanges();
-                XtraMessageBox.Show("Ürün Silindi !", "Başarılı | Hikmet Market ! ", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            UrunListele();
         }
 
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
